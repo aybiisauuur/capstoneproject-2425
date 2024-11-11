@@ -26,6 +26,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
@@ -33,23 +38,19 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                switch(item.getItemId()){
-                    case R.id.home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
-                        return true;
-                        break;
-                    case R.id.glossary:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, glossaryFragment).commit();
-                        return true;
-                        break;
-                    case R.id.about:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, aboutFragment).commit();
-                        return true;
-                        break;
-                    case R.id.settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container, settingsFragment).commit();
-                        return true;
-                        break;
+
+                if (item.getItemId() == R.id.home) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.glossary) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, glossaryFragment).commit();
+                    return true;
+                } else if(item.getItemId() == R.id.about) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, aboutFragment).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.settings) {
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, settingsFragment).commit();
+                    return true;
                 }
                 return false;
             }
