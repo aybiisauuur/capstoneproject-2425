@@ -1,0 +1,301 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  .main-container {
+    overflow: hidden;
+  }
+  
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
+    background: #ffffff;
+    overflow: hidden;
+  }
+  .rectangle {
+    position: relative;
+    width: 1440px;
+    height: 114px;
+    margin: 0 0 0 0;
+    background: rgba(217, 217, 217, 0.4);
+    border-bottom: 2px solid #575757;
+    z-index: 1;
+  }
+  .senyas-hub {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 55px;
+    top: 43px;
+    left: 581px;
+    color: #000000;
+    font-family: Josefin Sans, var(--default-font-family);
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 55px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  .flex-row {
+    position: relative;
+    width: 1382px;
+    height: 145px;
+    margin: 44px 0 0 46px;
+    z-index: 23;
+  }
+  .welcome-message {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 20px;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    font-family: Josefin Sans, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 21;
+  }
+  .image {
+    position: absolute;
+    width: 146px;
+    height: 145px;
+    top: 0;
+    left: 1236px;
+    background: url(./assets/images/6aa36a7550a1d1dbeb41c67677381f4d23884465.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 23;
+  }
+  .video-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 20px;
+    top: 40px;
+    left: 1px;
+    color: #ffffff;
+    font-family: Josefin Sans, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 22;
+  }
+  .flex-row-1 {
+    position: relative;
+    width: 1347px;
+    height: 544px;
+    margin: -5px 0 0 45px;
+    z-index: 29;
+  }
+  .text-input {
+    position: absolute;
+    width: 675px;
+    height: 454px;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    border: 0.3px solid #000000;
+    z-index: 26;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    position: relative;
+    width: 268px;
+    height: 56px;
+    margin: 30px 0 0 17px;
+    padding: 10px 10px 10px 10px;
+    z-index: 27;
+  }
+  .type-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    width: 248px;
+    height: 36px;
+    color: #5b5b5b;
+    font-family: Josefin Sans, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 28;
+  }
+  .vid-series {
+    position: absolute;
+    width: 635px;
+    height: 544px;
+    top: 0;
+    left: 712px;
+    background: #f1e5fc;
+    z-index: 29;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .video-placeholder {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 374px;
+    height: 36px;
+    top: 227px;
+    left: 131px;
+    color: #000000;
+    font-family: Josefin Sans, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 30;
+  }
+  .translate-button {
+    position: absolute;
+    width: 14.85%;
+    height: 9.19%;
+    top: 90.81%;
+    left: 35.26%;
+    cursor: pointer;
+    background: #004aad;
+    border: none;
+    z-index: 24;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .translate {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 42%;
+    height: 40%;
+    top: 30%;
+    left: 29%;
+    color: #ffffff;
+    font-family: Josefin Sans, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 25;
+  }
+  .rectangle-2 {
+    position: relative;
+    width: 1440px;
+    height: 132px;
+    margin: 50px 0 0 0;
+    background: #eeeeee;
+    z-index: 3;
+  }
+  .home-filled {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 30px;
+    left: 155px;
+    z-index: 5;
+    overflow: hidden;
+  }
+  .vector {
+    position: relative;
+    width: 56.66px;
+    height: 53.498px;
+    margin: 5.252px 0 0 3.669px;
+    background: url(./assets/images/d5f72557-ea14-4ed8-8df9-fc67a1bea51b.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 6;
+  }
+  .info-circle-filled {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 30px;
+    left: 792px;
+    z-index: 13;
+    overflow: hidden;
+  }
+  .vector-3 {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 4px 0 0 4px;
+    background: url(./assets/images/287238ab-87e7-4467-98c1-ce0ad2c0c3c9.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 14;
+  }
+  .book-fill {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 35px;
+    left: 451px;
+    z-index: 9;
+    overflow: hidden;
+  }
+  .vector-4 {
+    position: relative;
+    width: 64px;
+    height: 52.416px;
+    margin: 3.583px 0 0 0;
+    background: url(./assets/images/c1e01926-272b-4a2b-acea-9606127c1f99.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 10;
+  }
+  .setting-filled {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 35px;
+    left: 1091px;
+    z-index: 17;
+    overflow: hidden;
+  }
+  .vector-5 {
+    position: relative;
+    width: 52.966px;
+    height: 55.921px;
+    margin: 4.066px 0 0 5.538px;
+    background: url(./assets/images/7f359ba2-ed9e-4400-9f2c-a0c18e6660eb.png)
+      no-repeat center;
+}
