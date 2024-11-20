@@ -2,6 +2,7 @@ import spacy
 from tkinter import Tk, Label, Entry, Button
 from PIL import Image, ImageTk
 import os
+import time
 
 # Load the spaCy model for English
 nlp = spacy.load("en_core_web_sm")
