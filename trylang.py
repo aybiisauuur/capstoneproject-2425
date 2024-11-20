@@ -22,7 +22,7 @@ def display_fsl_translation(osv_sentence):
             image_path = get_image_path(word[0])  # Use first letter for fingerspelling
             if os.path.exists(image_path):
                 img = Image.open(image_path)
-                img = img.resize((300, 300), Image.ANTIALIAS)
+                img = img.resize((300, 300), Image.Resampling.LANCZOS) 
                 img_tk = ImageTk.PhotoImage(img)
                 label.config(image=img_tk)
                 label.image = img_tk
