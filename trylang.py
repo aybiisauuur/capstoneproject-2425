@@ -1,8 +1,16 @@
 import spacy
 from tkinter import Tk, Label, Entry, Button
 from PIL import Image, ImageTk
+#from fontTools.ttLib import TTFont
 import os
 import time
+
+# NOTE: THIS ONLY WORKS FOR INDIVIDUAL WORDS ONLY. AND SO FAR IT ONLY HAS FINGERSPELLING. 
+# Phrases or sentences will be translated to fingerspelling in the same structure (which is not supposed to be)
+
+# What to fix: 
+# parsing of .ttf FSL font - the mccid fsl font has letters and numbers
+# Add word tokenization, stemming, lemmatization etc etc (or are they all automatically done by spacy? need to read docs)
 
 # Load the spaCy model for English
 nlp = spacy.load("en_core_web_sm")
@@ -16,18 +24,19 @@ def get_image_path(word):
     return os.path.join(FSL_IMAGE_FOLDER, filename)
 
 def display_fsl_translation(osv_sentence):
-    """Display each word in the OSV sentence using FSL images."""
+    """Display each letter in the OSV sentence using FSL images."""
     for word in osv_sentence.split():
-        if word.isalpha():
-            image_path = get_image_path(word[0])  # Use first letter for fingerspelling
-            if os.path.exists(image_path):
-                img = Image.open(image_path)
-                img = img.resize((300, 300), Image.Resampling.LANCZOS) 
-                img_tk = ImageTk.PhotoImage(img)
-                label.config(image=img_tk)
-                label.image = img_tk
-                window.update()
-                time.sleep(1)  # Display each image for 1 second
+        for letter in word:  # Loop through each letter in the word
+            if letter.isalpha():
+                image_path = get_image_path(letter)  # Get the image for the letter
+                if os.path.exists(image_path):
+                    img = Image.open(image_path)
+                    img = img.resize((300, 300), Image.Resampling.LANCZOS) 
+                    img_tk = ImageTk.PhotoImage(img)
+                    label.config(image=img_tk)
+                    label.image = img_tk
+                    window.update()
+                    time.sleep(1)  # Display each image for 1 second
 
 def translate_to_fsl(input_text):
     """Translate English text to FSL in OSV structure."""

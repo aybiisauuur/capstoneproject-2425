@@ -1,0 +1,31 @@
+User inputs the text (word or phrase)
+
+Undergo text preprocessing: 
+- words are recognized as signs stored in the dataset 
+- signs converted to .gif (words with signs) or .ttf (letters)
+
+Text preprocessing 
+1. Tokenization: Split into tokens 
+Word-based
+"What" "is" "your" "name" 
+or character-based
+'w' 'h' 'a' 't' ...
+
+2. Text normalization - standardize text by making them lowercase to ensure consistency 
+
+3. Remove stop words 
+What is your name - What name 
+
+4. Stemming - revert word to root word
+(bale magdownload ka ng library for stemming)
+use stemmers: Search for stemmers 
+
+5. Lemmatization
+(try machine learning based lemmatization because it trains with large text datasets)
+spaCy
+
+6. Parsing 
+- grammtical forms 
+
+7. POS Tagging 
+determine what part of the speech is a word 

@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header class="app-header">
@@ -59,22 +60,5 @@
             </ul>
         </nav>
     </footer>
-    <script>
-        $(document).ready(function() {
-            $('#translation-form').on('submit', function(e) {
-                e.preventDefault();
-                var $button = $('#translate-btn');
-                var $videoPlaceholder = $('#video-placeholder');
-                
-                $button.text('Translating').addClass('translating').prop('disabled', true);
-                $videoPlaceholder.removeClass('video-active');
-                
-                setTimeout(function() {
-                    $videoPlaceholder.html('Video content here').addClass('video-active');
-                    $button.text('Translate').removeClass('translating').prop('disabled', false);
-                }, 2000);
-            });
-        });
-    </script>
 </body>
 </html>
