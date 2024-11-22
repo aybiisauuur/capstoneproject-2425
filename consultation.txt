@@ -1,0 +1,20 @@
+yow 
+
+establish a connection first between two devices 
+example: 
+- same network, bluetooth?
+- iphone airdrop
+- qr code?
+- "kindly scan to communicate with me" instruction 
+SEARCH MO NALNG DAW 
+pwede web app but optimize for mobile devices 
+
+scope and delimitations: 
+common words and phrases 
+simple sentences 
+focus on text to sign
+justfy mo yung limitations 
+recommendations of study: image recognition 
+two way translator 
+
+- scan qr code > web app shows up to the deaf client 

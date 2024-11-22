@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSL Glossary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="glossary-styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <section class="glossary" role="main">
+        <header class="glossary-header" role="banner">
+            <h1>SenyasHub</h1>
+        </header>
+        <main class="content-wrapper">
+            <article class="intro-section">
+                <h2 class="intro-text">
+                    A glossary of basic FSL words and phrases.
+                    <br><br>
+                    Arranged per category.
+                </h2>
+            </article>
+            <section class="categories-section" aria-label="FSL Categories">
+                <a href="greetings-subpage.html" class="category-card light" tabindex="0" aria-label="Go to FSL Greetings section">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c5d0405eb18ce3cbe3be23cf1edfaa4a953aba6eb9ad113a05ba62098b3dd8d7?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing FSL greetings category" class="category-icon">
+                    <h3 class="category-title">Greetings</h3>
+                </a>
+                <a href="#" class="category-card medium" tabindex="0" aria-label="Go to Basic Action Words section">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9113f49e6221c95ecbd076f7cbcdec4cbfd15dd10e9c25ffa336ce047d0192b1?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing basic FSL action words" class="category-icon">
+                    <h3 class="category-title">Basic Action Words</h3>
+                </a>
+                <a href="#" class="category-card dark" tabindex="0" aria-label="Go to FSL Questions section">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f8b446b4ffaf6412c0746c4ca4d6f1e62c13dc396cbc1bae9dd424bbf8ea3d6?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing FSL questions category" class="category-icon">
+                    <h3 class="category-title">Questions</h3>
+                </a>
+            </section>
+        </main>
+        <footer class="app-footer">
+            <nav class="footer-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index-home.html" class="nav-link">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/865869e299572834ae30edc4499ae01a0f411031ae7fc6dd104252722b726f99?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="glossary-section.html" class="nav-link active">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/86b709c4b71153a017449012849b04404b861e02ac3dda66f86628f0ff2c9d23?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                            <span>Glossary</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1b50a4f79a7daf5a9e74853e641bcd3f2b81dc65c1b313074a4631a2fe362196?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </section>
+    <script>
+        $(document).ready(function() {
+            $('.category-card').on('mouseenter focus', function() {
+                $(this).addClass('hover');
+            }).on('mouseleave blur', function() {
+                $(this).removeClass('hover');
+            });
+
+            $('.nav-link').on('click', function(e) {
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.category-card').on('keypress', function(e) {
+                if (e.which === 13) {
+                    window.location.href = $(this).attr('href');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
