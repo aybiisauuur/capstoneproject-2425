@@ -1,29 +1,22 @@
-from fontTools.ttLib import TTFont
-font = TTFont(r"C:\Users\Admin\capstoneproject-2425-1\fsl_alphabet\Mccidfslfont2-regular.ttf")
-print(font)
-
 import tkinter as tk
 from tkinter import font
 import time
 import os
 
 # Path to your FSL font (.ttf) file
-FSL_FONT_PATH = "fsl_alphabet\Mccidfslfont2-regular.ttf"
+FSL_FONT_PATH = r"fsl_alphabet\Mccidfslfont2-regular.ttf"
 
 def display_fingerspelling(text):
     """Display each character (letters and numbers) using the FSL font."""
     for char in text:
         if char.isalnum():  # Only display letters and numbers
-            # Update the label with the character
             label.config(text=char.upper())
-            
-            # Pause to allow the user to see the sign
             window.update()
             time.sleep(1)  # Display each character for 1 second
 
 def on_translate():
     """Handle the translation button click event."""
-    user_input = text_entry.get()
+    user_input = text_entry.get().strip()
     display_fingerspelling(user_input)
 
 # Create the main window
@@ -33,11 +26,14 @@ window.geometry("400x400")
 
 # Load the FSL font if available
 if os.path.exists(FSL_FONT_PATH):
-    fsl_font = font.Font(family="FSL", size=100, weight="bold")
-    window.option_add("*Font", fsl_font)
+    try:
+        fsl_font = font.Font(file=FSL_FONT_PATH, size=100)
+    except Exception as e:
+        print(f"Error loading FSL font: {e}")
+        fsl_font = ("Arial", 100)  # Fallback to default font
 else:
     print(f"Font file not found: {FSL_FONT_PATH}")
-    fsl_font = ("Arial", 100)  # Fallback to default font
+    fsl_font = ("Arial", 100)
 
 # Input label and text entry
 tk.Label(window, text="Enter text to translate:").pack(pady=10)
