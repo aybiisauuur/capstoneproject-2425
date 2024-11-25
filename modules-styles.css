@@ -19,13 +19,13 @@ body {
     padding: 0;
 }
 
-.glossary {
+.modules {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.glossary-header {
+.modules-header {
     background-color: rgba(217, 217, 217, 0.4);
     border-top: 2px solid #575757;
     padding: 15px 20px;

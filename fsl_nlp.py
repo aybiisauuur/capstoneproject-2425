@@ -8,7 +8,7 @@ import time
 nlp = spacy.load("en_core_web_sm")
 
 # Path to the folder containing FSL images
-FSL_IMAGE_FOLDER = "fsl_alphabet"
+FSL_IMAGE_FOLDER = "fsl_dataset"
 
 def get_image_path(word):
     """Get the image path for the corresponding word or letter."""
@@ -49,13 +49,14 @@ def validate_input(input_text):
     return True
 
 def translate_to_fsl(input_text):
-    """Translate English text to FSL in OSV structure for simple phrases/questions."""
+    """Translate English text to FSL in OSV structure or handle WH-questions."""
     # Parse the sentence
     doc = nlp(input_text)
     subject = None
     verb = None
     obj = None
     wh_word = None
+    copula = None  # For "is", "are", etc.
 
     # Extract WH-word, subject, verb, and object
     for token in doc:
@@ -67,11 +68,15 @@ def translate_to_fsl(input_text):
             verb = token.text
         elif token.tag_ in ("WDT", "WP", "WRB"):  # WH-words like What, Who, Where
             wh_word = token.text
+        elif token.dep_ == "ROOT" and token.pos_ == "AUX":  # Handle copulas like "is", "are"
+            copula = token.text
 
-    # Construct OSV sentence for supported patterns
-    if wh_word and subject and verb:
+    # Handle WH-questions specifically
+    if wh_word and copula and subject:
+        osv_sentence = f"{subject} {wh_word}"
+    elif wh_word and subject and verb:  # For patterns like "What did you eat?"
         osv_sentence = f"{subject} {verb} {wh_word}"
-    elif obj and subject and verb:
+    elif obj and subject and verb:  # Handle declarative sentences
         osv_sentence = f"{obj} {subject} {verb}"
     else:
         messagebox.showwarning(
