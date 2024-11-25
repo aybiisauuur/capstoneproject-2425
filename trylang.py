@@ -27,11 +27,11 @@ def display_fsl_translation(osv_sentence):
     """Display each letter in the OSV sentence using FSL images."""
     for word in osv_sentence.split():
         for letter in word:  # Loop through each letter in the word
-            if letter.isalpha():
+            if letter.isalpha():  # Check if the character is a letter
                 image_path = get_image_path(letter)  # Get the image for the letter
                 if os.path.exists(image_path):
                     img = Image.open(image_path)
-                    img = img.resize((300, 300), Image.Resampling.LANCZOS) 
+                    img = img.resize((300, 300), Image.Resampling.LANCZOS)  # Resize the image
                     img_tk = ImageTk.PhotoImage(img)
                     label.config(image=img_tk)
                     label.image = img_tk
@@ -39,24 +39,29 @@ def display_fsl_translation(osv_sentence):
                     time.sleep(1)  # Display each image for 1 second
 
 def translate_to_fsl(input_text):
-    """Translate English text to FSL in OSV structure."""
+    """Translate English text to FSL in OSV structure for simple phrases/questions."""
     # Parse the sentence
     doc = nlp(input_text)
     subject = None
     verb = None
     obj = None
+    wh_word = None
 
-    # Extract subject, verb, and object
+    # Extract WH-word, subject, verb, and object
     for token in doc:
-        if token.dep_ == "nsubj":
+        if token.dep_ == "nsubj":  # Subject
             subject = token.text
-        elif token.dep_ == "dobj":
+        elif token.dep_ == "dobj":  # Direct object
             obj = token.text
-        elif token.pos_ == "VERB":
+        elif token.pos_ == "VERB":  # Verb
             verb = token.text
+        elif token.tag_ in ("WDT", "WP", "WRB"):  # WH-words like What, Who, Where
+            wh_word = token.text
 
-    # Reorder to OSV structure
-    if obj and subject and verb:
+    # Construct OSV sentence for supported patterns
+    if wh_word and subject and verb:
+        osv_sentence = f"{subject} {verb} {wh_word}"
+    elif obj and subject and verb:
         osv_sentence = f"{obj} {subject} {verb}"
     else:
         osv_sentence = input_text  # Fallback to input text if parsing fails
