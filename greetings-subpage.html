@@ -28,7 +28,7 @@
                     <h2 class="card-title">Hello / Hi</h2>
                 </article>
 
-                <article class="card" tabindex="0" role="button" aria-label="View Good Morning sign language video">
+                <article class="card" tabindex="0" role="button" aria-label="View Good Morning sign language video" data-video="fsl_dataset/good-morning.mp4">
                     <div class="card-image-wrapper">
                         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/030d8fe6bdbfa6c3c4e276d81bd5ca42fccebe7f9a9985d549d417cb0255548f?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="card-bg" aria-hidden="true">
                         <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/628a35682519e68625e46eba69ff123231ee278a653ed2cceed59dee801f5f00?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Good Morning hand sign" class="card-icon">
@@ -149,10 +149,11 @@
             </nav>
         </footer>
 
-        <div class="video-overlay" role="dialog" aria-modal="true" aria-label="Video player" aria-hidden="true">
+        <div class="video-overlay" role="dialog" aria-modal="true" aria-label="Video player" aria-hidden="true" style="display: none;">
             <div class="video-container">
                 <button class="close-button" aria-label="Close video">×</button>
-                <div class="video-content" role="region" aria-label="Video content"></div>
+                <div class="video-content" role="region" aria-label="Video content">
+                </div>
             </div>
         </div>
     </div>
@@ -160,22 +161,23 @@
     <script>
         $(document).ready(function() {
             $('.card').click(function() {
-                $('.video-overlay').fadeIn(200).attr('aria-hidden', 'false');
-                $('.video-container').focus();
-                $('body').css('overflow', 'hidden');
-            });
-
-            $('.card').keypress(function(e) {
-                if (e.which === 13 || e.which === 32) {
-                    $(this).click();
+                const videoPath = $(this).data('video'); // Get the video path from the data-video attribute
+                if (videoPath) {
+                    $('.video-content').html(`
+                        <video controls autoplay>
+                            <source src="${videoPath}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    `);
+                    $('.video-overlay').fadeIn(200).attr('aria-hidden', 'false');
+                    $('body').css('overflow', 'hidden');
                 }
             });
 
             function closeVideoOverlay() {
                 $('.video-overlay').fadeOut(200).attr('aria-hidden', 'true');
                 $('body').css('overflow', '');
-                $(document.activeElement).blur();
-                $('.card').first().focus();
+                $('.video-content').html(''); // Clear the video content
             }
 
             $('.close-button, .video-overlay').click(function(e) {
@@ -183,16 +185,17 @@
                     closeVideoOverlay();
                 }
             });
-
+            
             $('.video-container').click(function(e) {
-                e.stopPropagation();
-            });
+                        e.stopPropagation();
+                    });
 
             $(document).keyup(function(e) {
                 if (e.key === "Escape" && $('.video-overlay').is(':visible')) {
                     closeVideoOverlay();
                 }
             });
+
         });
     </script>
 </body>
