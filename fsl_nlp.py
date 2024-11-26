@@ -1,3 +1,7 @@
+# sample backend !! to be integrated in the frontend
+# grammar/structure is okay
+# limitation: basic sentences and questions only 
+
 import spacy
 from tkinter import Tk, Label, Entry, Button, messagebox
 from PIL import Image, ImageTk

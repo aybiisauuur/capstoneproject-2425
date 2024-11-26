@@ -1,4 +1,5 @@
-/*$(document).ready(function() {
+//please wag idelete ito!! this is the placeholder!!
+$(document).ready(function() {
     $('#translation-form').on('submit', function(e) {
         e.preventDefault();
         var $button = $('#translate-btn');
@@ -12,9 +13,10 @@
             $button.text('Translate').removeClass('translating').prop('disabled', false);
         }, 2000);
     });
-});*/
+}); 
 
-$(document).ready(function () {
+//the code below is for integrating the frontend and the backend make this a comment 
+/*$(document).ready(function () {
     $("#translation-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -52,4 +54,4 @@ $(document).ready(function () {
             },
         });
     });
-});
+});*/

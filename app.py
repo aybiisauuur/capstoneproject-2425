@@ -1,3 +1,5 @@
+# PLS DONT RUN THIS not yet working
+
 from flask import Flask, render_template, request, jsonify
 import spacy
 import os
@@ -19,7 +21,7 @@ def get_image_path(letter):
 def translate_to_fsl(input_text):
     """Translate English text to FSL in OSV structure."""
     doc = nlp(input_text)
-    subject, verb, obj, wh_word = None, None, None, None
+    subject, verb, obj, wh_word, copula = None, None, None, None, None
 
     # Extract key elements
     for token in doc:
@@ -31,11 +33,15 @@ def translate_to_fsl(input_text):
             verb = token.text
         elif token.tag_ in ("WDT", "WP", "WRB"):  # WH-words
             wh_word = token.text
+        elif token.dep_ == "ROOT" and token.pos_ == "AUX":  # Handle copulas like "is", "are"
+            copula = token.text
 
     # Reorder based on OSV structure
-    if wh_word and subject and verb:
+    if wh_word and copula and subject:
+        osv_sentence = f"{subject} {wh_word}"
+    elif wh_word and subject and verb:  # For patterns like "What did you eat?"
         osv_sentence = f"{subject} {verb} {wh_word}"
-    elif obj and subject and verb:
+    elif obj and subject and verb:  # Handle declarative sentences
         osv_sentence = f"{obj} {subject} {verb}"
     else:
         osv_sentence = input_text  # Fallback
@@ -59,13 +65,14 @@ def index():
 @app.route('/translate', methods=['POST'])
 def translate():
     """Handle translation requests."""
-    input_text = request.get_json()
+    data = request.get_json()
+    input_text = data.get("text")
     if not input_text:
         return jsonify({"error": "Input cannot be empty!"}), 400
 
     try:
         images = translate_to_fsl(input_text)
-        return jsonify({"images": image_paths})
+        return jsonify({"images": images})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
