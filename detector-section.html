@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SenyasHub - Home</title>
+    <title>SenyasHub - Sign Language Detector</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="detector.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
 </head>
-<body>
+    
+<section class="detector-container">
     <header class="app-header">
-        <h1 class="app-title">SenyasHub</h1>
-    </header>
-    <main class="main-content">
-        <h2 class="page-subtitle">Conversations Made Easy - English text to Filipino Sign Language (FSL) Translator</h2>
-        <div class="content-wrapper">
-            <section class="input-section">
-                <form id="translation-form" class="translation-form">
-                    <label for="text-input" class="visually-hidden">Enter text to translate</label>
-                    <textarea id="text-input" class="text-input" placeholder="Type text here..." aria-label="Enter text to translate"></textarea>
-                    <button type="submit" id="translate-btn" class="translate-button">Translate</button>
-                </form>
-            </section>
-            <section class="output-section">
-                <div id="video-placeholder" class="video-placeholder" aria-live="polite">
-                    Video will appear here.
-                </div>
-            </section>
+      <h1 class="app-title">Sign Language Detector</h1>
+  </header>
+    
+      <div class="disclaimer-text">
+        Disclaimer: This only works on basic greetings in Filipino Sign Language.
+      </div>
+    
+      <section class="camera-container" aria-label="Sign language detection camera">
+        <div class="camera-view">
+          <img 
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8cc3c6171d6bdc26bfe3ced008cdce9eef30ffb876bd4f01694040aa0e1968d9?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+            class="camera-icon"
+            alt="Camera indicator icon"
+            loading="lazy"
+          />
         </div>
-    </main>
-    <footer class="app-footer">
+      </section>
+    
+      <footer class="app-footer">
         <nav class="footer-nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="index-home.html" class="nav-link active">
-                        <img src="home-filled.png" alt="" class="nav-icon">
+                    <a href="index-home.html" class="nav-link">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1097b72758fcea49f017b52e2c6bc06aa36e37c911fdc33b3f1dbad957b3fc82?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
                         <span>Home</span>
                     </a>
                 </li>
@@ -46,8 +46,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="detector-section.html" class="nav-link">
-                        <img src="detector-notfilled.png" alt="" class="nav-icon">
+                    <a href="detector-section.html" class="nav-link active">
+                        <img src="Vector.png" alt="" class="nav-icon">
                         <span>Detector</span>
                     </a>
                 </li>
@@ -66,5 +66,15 @@
             </ul>
         </nav>
     </footer>
-</body>
-</html>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('.nav-item').on('click keypress', function(e) {
+        if (e.type === 'keypress' && e.which !== 13) return;
+        $('.nav-item').removeClass('nav-item-active');
+        $(this).addClass('nav-item-active');
+      });
+    });
+    </script>
