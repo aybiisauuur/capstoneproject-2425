@@ -28,7 +28,8 @@
   font: 400 20px 'Josefin Sans', sans-serif;
 
 }
-    
+
+
 .main-content {
   flex: 1;
   display: flex;
@@ -40,7 +41,15 @@
   padding: 40px;
   font-size: 35px;
   color: #000000;
+
+    background-color: rgba(0, 64, 149, 0.5);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }
+
 
 .video-container {
   background-color: rgba(217, 217, 217, 0.4);
