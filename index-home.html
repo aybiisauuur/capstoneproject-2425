@@ -13,36 +13,50 @@
     <header class="app-header">
         <h1 class="app-title">SenyasHub</h1>
     </header>
-    <main class="main-content">
-        <h2 class="page-subtitle">Conversations Made Easy - English text to Filipino Sign Language (FSL) Translator</h2>
-        <div class="content-wrapper">
-            <section class="input-section">
-                <form id="translation-form" class="translation-form">
-                    <label for="text-input" class="visually-hidden">Enter text to translate</label>
-                    <textarea id="text-input" class="text-input" placeholder="Type text here..." aria-label="Enter text to translate"></textarea>
-                    <button type="submit" id="translate-btn" class="translate-button">Translate</button>
-                </form>
-            </section>
-            <section class="output-section">
-                <div id="video-placeholder" class="video-placeholder" aria-live="polite">
-                    Video will appear here.
-                </div>
-            </section>
+    <div class="search-container">
+        <div class="search-box">
+            <input type="search" class="search-input" placeholder="What would you like to learn?" aria-label="Search modules">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a62d0954dce249c2f05faacbad007e4cf7c999f140777f38537ca568c60a08f?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="Search" class="nav-icon" width="34" height="34">
         </div>
+    </div>
+
+    <main class="main-content" role="main">
+        <section class="info-panel" aria-label="App Information">
+            <p>This app will help you turn your eyes into ears. With this app, you will be able to learn the basics of Filipino Sign Language (FSL).</p>
+            <br>
+            <p>The modules and sign language detector can only be accessed if you have an internet connection.</p>
+            <br>
+            <p>To learn more about this app, please click on the About Us tab located below.</p>
+        </section>
+
+        <aside class="recent-section" aria-label="Recent Modules">
+            <h2 class="recent-header">Recents</h2>
+            <div class="recent-item" tabindex="0" role="button">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a2568b9bcbeee7c939b9432fd286536999385b724f06eefb85f65f0cbb2af57?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="nav-icon" aria-hidden="true">
+                <span>Greetings</span>
+            </div>
+        </aside>
     </main>
+    
     <footer class="app-footer">
         <nav class="footer-nav">
             <ul class="nav-list">
                 <li class="nav-item">
                     <a href="index-home.html" class="nav-link active">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/865869e299572834ae30edc4499ae01a0f411031ae7fc6dd104252722b726f99?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                        <img src="home-filled.png" alt="" class="nav-icon">
                         <span>Home</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="modules-section.html" class="nav-link">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/86b709c4b71153a017449012849b04404b861e02ac3dda66f86628f0ff2c9d23?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                    <a href="modules-section.html" class="nav-link ">
+                        <img src="book-fill.png" alt="" class="nav-icon">
                         <span>Modules</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="detector-section.html" class="nav-link">
+                        <img src="detector-notfilled.png" alt="" class="nav-icon">
+                        <span>Detector</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -60,5 +74,37 @@
             </ul>
         </nav>
     </footer>
+    <script>
+            $('.search-input').focus(function() {
+                $('.search-box').css('border-color', '#004AB3');
+            }).blur(function() {
+                $('.search-box').css('border-color', '#000');
+            });
+
+            let recentModules = [];
+            
+            $('.recent-item').click(function() {
+                const moduleName = $(this).find('span').text();
+                if (!recentModules.includes(moduleName)) {
+                    recentModules.unshift(moduleName);
+                    if (recentModules.length > 5) {
+                        recentModules.pop();
+                    }
+                    updateRecentsList();
+                }
+            });
+
+            function updateRecentsList() {
+                $('.recent-section').html(`
+                    <h2 class="recent-header">Recents</h2>
+                    ${recentModules.map(module => `
+                        <div class="recent-item" tabindex="0" role="button">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a2568b9bcbeee7c939b9432fd286536999385b724f06eefb85f65f0cbb2af57?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="nav-icon" aria-hidden="true">
+                            <span>${module}</span>
+                        </div>
+                    `).join('')}
+                `);
+            }
+    </script>
 </body>
 </html>
