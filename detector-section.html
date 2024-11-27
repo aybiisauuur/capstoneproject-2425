@@ -15,20 +15,19 @@
       <h1 class="app-title">Sign Language Detector</h1>
   </header>
     
-      <div class="disclaimer-text">
+  <main class="main-content" role="main">
+    <p class="disclaimer-text" aria-label="Disclaimer message">
         Disclaimer: This only works on basic greetings in Filipino Sign Language.
-      </div>
-    
-      <section class="camera-container" aria-label="Sign language detection camera">
-        <div class="camera-view">
-          <img 
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8cc3c6171d6bdc26bfe3ced008cdce9eef30ffb876bd4f01694040aa0e1968d9?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
-            class="camera-icon"
-            alt="Camera indicator icon"
-            loading="lazy"
-          />
+    </p>
+
+    <div class="video-container">
+        <div class="video-frame">
+            <button class="record-button" aria-label="Start recording">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8cc3c6171d6bdc26bfe3ced008cdce9eef30ffb876bd4f01694040aa0e1968d9?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="Record button icon">
+            </button>
         </div>
-      </section>
+    </div>
+</main>
     
       <footer class="app-footer">
         <nav class="footer-nav">
@@ -70,11 +69,22 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function() {
-      $('.nav-item').on('click keypress', function(e) {
-        if (e.type === 'keypress' && e.which !== 13) return;
-        $('.nav-item').removeClass('nav-item-active');
-        $(this).addClass('nav-item-active');
-      });
-    });
+
+            $('.record-button').on('click keypress', function(e) {
+                if (e.type === 'keypress' && e.which !== 13) return;
+                $(this).toggleClass('recording');
+            });
+
+            $(document).on('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    $('.nav-item:focus').addClass('focus-visible');
+                }
+            });
+
+            $(document).on('click', function() {
+                $('.focus-visible').removeClass('focus-visible');
+            });
+        ;
+
+        
     </script>

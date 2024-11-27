@@ -6,56 +6,78 @@
     font-family: 'Josefin Sans', sans-serif;
   }
 
-.about-container {
+.detector-container {
     height: 100vh;
     background-color: #fff;
     display: flex;
     flex-direction: column;
   }
   
-  .app-header {
-    background-color: rgba(217, 217, 217, 0.4);
-    border-top: 2px solid #575757;
-    padding: 15px 20px;
-    text-align: center;
-  }
-  
-  .app-title {
-    color: #000;
-    font-size: 20px;
-    font-weight: 400;
-    margin: 0;
-    font: 400 20px 'Josefin Sans', sans-serif;
-  
-  }
+.app-header {
+  background-color: rgba(217, 217, 217, 0.4);
+  border-top: 2px solid #575757;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.app-title {
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  font: 400 20px 'Josefin Sans', sans-serif;
+
+}
     
-    .camera-container {
-      background-color: rgba(217, 217, 217, 0.4);
-      align-self: center;
-      z-index: 10;
-      display: flex;
-      margin-top: 12px;
-      width: 1384px;
-      max-width: 100%;
-      flex-direction: column;
-      padding: 12px 20px 52px;
-    }
-    
-    .camera-view {
-      border-radius: 10px;
-      background-color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 571px 80px 11px;
-    }
-    
-    .camera-icon {
-      aspect-ratio: 1.11;
-      object-fit: contain;
-      width: 60px;
-      margin-left: 17px;
-    }
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.disclaimer-text {
+  padding: 40px;
+  font-size: 35px;
+  color: #000000;
+}
+
+.video-container {
+  background-color: rgba(217, 217, 217, 0.4);
+  margin: 12px auto;
+  width: 90%;
+  max-width: 1384px;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+.video-frame {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+.record-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.record-button:hover {
+  transform: scale(1.1);
+}
+
+.record-button img {
+  width: 100%;
+  height: 100%;
+}
     
     .app-footer {
         background-color: #EEEEEE;
@@ -112,19 +134,16 @@
     }
     
     @media (max-width: 991px) {
-      .header-banner,
-      .disclaimer-text,
-      .nav-container {
-        padding: 0 20px;
-      }
-    
-      .camera-view {
-        padding: 100px 20px 0;
-      }
+      .disclaimer-text {
+        font-size: 24px;
+    }
+
+    .video-frame {
+        height: 40vh;
+    }
+
     
       .nav-items {
-        flex-wrap: wrap;
-        justify-content: center;
+        white-space: initial;
       }
     }
- 
