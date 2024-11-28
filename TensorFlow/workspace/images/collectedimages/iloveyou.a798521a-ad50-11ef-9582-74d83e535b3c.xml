@@ -1,0 +1,26 @@
+<annotation>
+	<folder>collectedimages</folder>
+	<filename>iloveyou.a798521a-ad50-11ef-9582-74d83e535b3c.jpg</filename>
+	<path>D:\capstoneproject-2425\TensorFlow\workspace\images\collectedimages\iloveyou.a798521a-ad50-11ef-9582-74d83e535b3c.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>I love you</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>313</xmin>
+			<ymin>198</ymin>
+			<xmax>454</xmax>
+			<ymax>379</ymax>
+		</bndbox>
+	</object>
+</annotation>

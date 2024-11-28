@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>collectedimages</folder>
+	<filename>thanks.64a205cd-ad50-11ef-8bdf-74d83e535b3c.jpg</filename>
+	<path>D:\capstoneproject-2425\TensorFlow\workspace\images\collectedimages\thanks.64a205cd-ad50-11ef-8bdf-74d83e535b3c.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Thank you</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>144</xmin>
+			<ymin>222</ymin>
+			<xmax>508</xmax>
+			<ymax>394</ymax>
+		</bndbox>
+	</object>
+</annotation>
