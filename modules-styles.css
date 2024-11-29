@@ -19,6 +19,37 @@ body {
     padding: 0;
 }
 
+.search-container {
+    background-color: rgba(0, 64, 149, 0.5);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.search-box {
+    max-width: 800px;
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000;
+    transition: border-color 0.3s;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .modules {
     display: flex;
     flex-direction: column;
@@ -187,5 +218,32 @@ body {
     .category-card,
     .nav-link {
         transition: none;
+    }
+}
+
+@media (max-width: 991px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .main-content {
+        flex-direction: column;
+        max-height: none;
+    }
+
+    .info-panel,
+    .recent-section {
+        flex: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    .search-box {
+        width: 95%;
+    }
+
+    .nav-items {
+        flex-wrap: wrap;
+        gap: 20px;
     }
 }
