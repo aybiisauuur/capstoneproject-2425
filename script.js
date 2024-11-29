@@ -1,57 +1,18 @@
-//please wag idelete ito!! this is the placeholder!!
-$(document).ready(function() {
-    $('#translation-form').on('submit', function(e) {
-        e.preventDefault();
-        var $button = $('#translate-btn');
-        var $videoPlaceholder = $('#video-placeholder');
-        
-        $button.text('Translating').addClass('translating').prop('disabled', true);
-        $videoPlaceholder.removeClass('video-active');
-        
-        setTimeout(function() {
-            $videoPlaceholder.html('Video content here').addClass('video-active');
-            $button.text('Translate').removeClass('translating').prop('disabled', false);
-        }, 2000);
+/*$('.search-input').on('keyup', function () {
+    const value = $(this).val().toLowerCase();
+    console.log('Search value:', value); // Check input value
+
+    const items = $('.phrase-card').filter(function () {
+        const text = $(this).text().toLowerCase();
+        console.log('Checking card text:', text);
+        return text.includes(value);
     });
-}); 
 
-//the code below is for integrating the frontend and the backend make this a comment 
-/*$(document).ready(function () {
-    $("#translation-form").on("submit", function (event) {
-        event.preventDefault();
-
-        const inputText = $("#text-input").val().trim();
-        if (!inputText) {
-            alert("Please enter text to translate.");
-            return;
-        }
-
-        $.ajax({
-            url: "/translate",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({ text: inputText }),
-            success: function (response) {
-                const placeholder = $("#video-placeholder");
-                placeholder.empty(); // Clear previous results
-
-                if (response.images && response.images.length > 0) {
-                    response.images.forEach(function (imagePath) {
-                        const img = $("<img>")
-                            .attr("src", "/" + imagePath)  // Make sure the server can serve these images
-                            .attr("alt", "FSL letter")
-                            .css({ width: "100px", height: "100px", margin: "5px" });
-                        placeholder.append(img);
-                    });
-                } else {
-                    placeholder.text("No FSL images found for the given text.");
-                }
-            },
-            error: function (xhr) {
-                // Handle the error properly by displaying the error message
-                const errorMsg = xhr.responseJSON ? xhr.responseJSON.error : "An error occurred.";
-                alert("Error: " + errorMsg);
-            },
-        });
-    });
+    $('.phrase-card').hide(); // Hide all cards initially
+    if (items.length) {
+        items.show(); // Show matching cards
+        $('.no-results').hide(); // Hide "no-results" message
+    } else {
+        $('.no-results').show(); // Show "no-results" message
+    }
 });*/

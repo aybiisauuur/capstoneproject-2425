@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .no-results {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="search-input" placeholder="Search...">
+    <div class="phrase-card">Card 1</div>
+    <div class="phrase-card">Card 2</div>
+    <div class="phrase-card">Card 3</div>
+    <div class="no-results">No results found</div>
+
+    <script>
+        $('.search-input').on('keyup', function () {
+            const value = $(this).val().toLowerCase().trim();
+            const items = $('.phrase-card').filter(function () {
+                return $(this).text().toLowerCase().includes(value);
+            });
+
+            $('.phrase-card').hide();
+            if (items.length) {
+                items.show();
+                $('.no-results').hide();
+            } else {
+                $('.no-results').show();
+            }
+        });
+    </script>
+</body>
+</html>
