@@ -1,277 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senyas Hub - Modules Questions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="questions-section.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senyas Hub - Modules Questions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="questions-section.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
-    <div class="modules-container">
-        <header class="top-header" role="banner">
-            <a href="modules-section.html" class="back-link" aria-label="Back to previous page">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="back-icon" aria-hidden="true">
-                <span class="back-text">Modules</span>
+  <div class="modules-container">
+    <header class="top-header" role="banner">
+      <a href="modules-section.html" class="back-link" aria-label="Back to previous page">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+          alt="" class="back-icon" aria-hidden="true">
+        <span class="back-text">Modules</span>
+      </a>
+      <h1 class="page-title">Questions</h1>
+    </header>
+
+    <main class="phrases-container">
+      <nav class="category-nav" aria-label="Phrase categories">
+        <ul class="category-list" role="tablist">
+          <li class="category-item" role="presentation">
+            <button class="category-btn active" role="tab" aria-selected="true" data-category="all-phrases">All</button>
+          </li>
+          <li class="category-item" role="presentation">
+            <button class="category-btn" role="tab" aria-selected="false"
+              data-category="wh-questions">WH-Questions</button>
+          </li>
+          <li class="category-item" role="presentation">
+            <button class="category-btn" role="tab" aria-selected="false" data-category="intro">Introduction</button>
+          </li>
+          <li class="category-item" role="presentation">
+            <button class="category-btn" role="tab" aria-selected="false" data-category="time-related">Time
+              Related</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cards-grid">
+        <article class="phrase-card" tabindex="0" data-video-url="video1.mp4" data-category="wh-questions">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">What?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video2.mp4" data-category="wh-questions">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Who?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video3.mp4" data-category="wh-questions">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Why?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video4.mp4" data-category="wh-questions">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">When?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video5.mp4" data-category="wh-questions">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Where?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video6.mp4" data-category="wh-questions">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">How?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video7.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">What is your name?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video8.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">How old are you?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video9.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Where do you live?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video10.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Where are you from?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video11.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">How are you?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video12.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Do you understand?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video13.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Can you help me?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video14.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">What do you do?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video15.mp4" data-category="intro">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Are you married/single?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video16.mp4" data-category="time-related">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Where are you going?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video17.mp4" data-category="time-related">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">What time is it?</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="video18.mp4" data-category="time-related">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">What are you doing?</h2>
+        </article>
+      </div>
+
+      <div class="video-modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+          <button class="close-modal" aria-label="Close video">×</button>
+          <video controls width="100%">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <nav class="footer-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index-home.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1097b72758fcea49f017b52e2c6bc06aa36e37c911fdc33b3f1dbad957b3fc82?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="nav-icon">
+              <span>Home</span>
             </a>
-            <h1 class="page-title">Questions</h1>
-        </header>
+          </li>
+          <li class="nav-item">
+            <a href="modules-section.html" class="nav-link active">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/e920f5690be8288ab3bc063bbf2c1223118f400f4c4bdae32a7b4cd4fba9b2fc?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="nav-icon">
+              <span>Modules</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="detector-section.html" class="nav-link">
+              <img src="detector-notfilled.png" alt="" class="nav-icon">
+              <span>Detector</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about_us.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="nav-icon">
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="settings.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/1b50a4f79a7daf5a9e74853e641bcd3f2b81dc65c1b313074a4631a2fe362196?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="nav-icon">
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
 
-        <main class="phrases-container">
-            <nav class="category-nav" aria-label="Phrase categories">
-              <ul class="category-list" role="tablist">
-                <li class="category-item" role="presentation">
-                  <button class="category-btn active" role="tab" aria-selected="true" aria-controls="all-phrases">All</button>
-                </li>
-                <li class="category-item" role="presentation">
-                  <button class="category-btn" role="tab" aria-selected="false" aria-controls="wh-questions">WH-Questions</button>
-                </li>
-                <li class="category-item" role="presentation">
-                  <button class="category-btn" role="tab" aria-selected="false" aria-controls="intro">Introduction</button>
-                </li>
-                <li class="category-item" role="presentation">
-                    <button class="category-btn" role="tab" aria-selected="false" aria-controls="time-related">Time Related</button>
-                  </li>
-              </ul>
-            </nav>
-          
-            <div class="cards-grid">
-              <article class="phrase-card" tabindex="0" data-video-url="video1.mp4" data-category="wh-questions">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">What?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video2.mp4" data-category="wh-questions">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Who?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video3.mp4" data-category="wh-questions">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Why?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video4.mp4" data-category="wh-questions">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" class="card-icon">
-                </div>
-                <h2 class="card-title">When?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video5.mp4" data-category="wh-questions">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Where?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video6.mp4" data-category="wh-questions">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">How?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video7.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">What is your name?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video8.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">How old are you?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video9.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Where do you live?</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="video10.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Where are you from?</h2>
-              </article>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Category button click
+        /*$('.category-btn').click(function () {
+          // Toggle active state for category buttons
+          $('.category-btn').removeClass('active').attr('aria-selected', 'false');
+          $(this).addClass('active').attr('aria-selected', 'true');
 
-              <article class="phrase-card" tabindex="0" data-video-url="video11.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">How are you?</h2>
-              </article>
+          const category = $(this).text().toLowerCase();
+          if (category === 'all') {
+            // Show all cards if "All" is selected
+            $('.phrase-card').show();
+          } else {
+            // Hide all cards and show only the selected category
+            $('.phrase-card').hide();
+            $(`.phrase-card[data-category="${category}"]`).show();
+          }
+        });*/
 
-              <article class="phrase-card" tabindex="0" data-video-url="video12.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Do you understand?</h2>
-              </article>
+        $('.category-btn').click(function () {
+          // Toggle active state for category buttons
+          $('.category-btn').removeClass('active').attr('aria-selected', 'false');
+          $(this).addClass('active').attr('aria-selected', 'true');
 
-              <article class="phrase-card" tabindex="0" data-video-url="video13.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Can you help me?</h2>
-              </article>
+          const category = $(this).data('category');
 
-              <article class="phrase-card" tabindex="0" data-video-url="video14.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">What do you do?</h2>
-              </article>
+          if (category === 'all-phrases') {
+            // Show all cards if "All" is selected
+            $('.phrase-card').show();
+          } else {
+            // Hide all cards and show only the selected category
+            $('.phrase-card').hide();
+            $(`.phrase-card[data-category="${category}"]`).show();
+          }
+        });
 
-              <article class="phrase-card" tabindex="0" data-video-url="video15.mp4" data-category="intro">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Are you married/single?</h2>
-              </article>
+        // Handle video modal
+        $('.phrase-card').click(function () {
+          const videoUrl = $(this).data('video-url');
+          const modal = $('.video-modal');
+          const video = modal.find('video');
 
-              <article class="phrase-card" tabindex="0" data-video-url="video16.mp4" data-category="time-related">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Where are you going?</h2>
-              </article>
+          video.attr('src', videoUrl);
+          modal.addClass('active');
+          video[0].play();
+        });
 
-              <article class="phrase-card" tabindex="0" data-video-url="video17.mp4" data-category="time-related">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">What time is it?</h2>
-              </article>
+        // Close video modal
+        $('.close-modal').click(function () {
+          const modal = $('.video-modal');
+          const video = modal.find('video');
 
-              <article class="phrase-card" tabindex="0" data-video-url="video18.mp4" data-category="time-related">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">What are you doing?</h2>
-              </article>
-            </div>
-          
-            <div class="video-modal" role="dialog" aria-modal="true">
-              <div class="modal-content">
-                <button class="close-modal" aria-label="Close video">×</button>
-                <video controls width="100%">
-                  <source src="" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </main>
-          
-          <footer class="app-footer">
-              <nav class="footer-nav">
-                  <ul class="nav-list">
-                      <li class="nav-item">
-                          <a href="index-home.html" class="nav-link">
-                              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1097b72758fcea49f017b52e2c6bc06aa36e37c911fdc33b3f1dbad957b3fc82?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
-                              <span>Home</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="modules-section.html" class="nav-link active">
-                              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e920f5690be8288ab3bc063bbf2c1223118f400f4c4bdae32a7b4cd4fba9b2fc?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
-                              <span>Modules</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="detector-section.html" class="nav-link">
-                              <img src="detector-notfilled.png" alt="" class="nav-icon">
-                              <span>Detector</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="about_us.html" class="nav-link">
-                              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
-                              <span>About</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="settings.html" class="nav-link">
-                              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1b50a4f79a7daf5a9e74853e641bcd3f2b81dc65c1b313074a4631a2fe362196?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
-                              <span>Settings</span>
-                          </a>
-                      </li>
-                  </ul>
-              </nav>
-          </footer>
-          
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                // Category button click
-                $('.category-btn').click(function() {
-                    // Toggle active state for category buttons
-                    $('.category-btn').removeClass('active').attr('aria-selected', 'false');
-                    $(this).addClass('active').attr('aria-selected', 'true');
-                    
-                    const category = $(this).text().toLowerCase();
-                    if(category === 'all') {
-                        // Show all cards if "All" is selected
-                        $('.phrase-card').show();
-                    } else {
-                        // Hide all cards and show only the selected category
-                        $('.phrase-card').hide();
-                        $(`.phrase-card[data-category="${category}"]`).show();
-                    }
-                });
+          modal.removeClass('active');
+          video[0].pause();
+          video[0].currentTime = 0;
+        });
+      });
 
-                // Handle video modal
-                $('.phrase-card').click(function() {
-                    const videoUrl = $(this).data('video-url');
-                    const modal = $('.video-modal');
-                    const video = modal.find('video');
-                    
-                    video.attr('src', videoUrl);
-                    modal.addClass('active');
-                    video[0].play();
-                });
-
-                // Close video modal
-                $('.close-modal').click(function() {
-                    const modal = $('.video-modal');
-                    const video = modal.find('video');
-                    
-                    modal.removeClass('active');
-                    video[0].pause();
-                    video[0].currentTime = 0;
-                });
-            });
-            
-        </script>
+    </script>
 </body>
+
 </html>
