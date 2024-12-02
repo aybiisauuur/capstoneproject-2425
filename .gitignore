@@ -9,3 +9,7 @@ __pycache__/
 # Ignore environment configuration files
 .envrc
 .env
+
+
+#ignore keypoint values
+MP_Data/
