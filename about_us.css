@@ -55,7 +55,7 @@ html, body {
 
 .main-content {
   color: #000;
-  font: 400 24px 'Arimo', sans-serif;
+  font: 400 20px 'Arimo', sans-serif;
   overflow-y: auto;
   padding-right: 20px;
 }

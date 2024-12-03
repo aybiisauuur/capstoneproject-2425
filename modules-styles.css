@@ -78,6 +78,7 @@ body {
     padding: 10 10px;
     display: flex;
     gap: 50px;
+    margin-bottom: 100px;
 }
 
 .intro-text {
@@ -89,7 +90,7 @@ body {
 
 .categories-section {
     display: grid;
-    gap: 30px;
+    gap: 20px;
     max-width: 590px;
     margin-left: auto;
 }
@@ -139,62 +140,74 @@ body {
     margin: 0;
 }
 
+
 .app-footer {
-    background-color: #EEEEEE;
-    border-top: 2px solid #575757;
-    padding: 10px 10px;
-    position: fixed; /* Keep it fixed at the bottom */
-    bottom: 0;
+  background-color: #EEEEEE;
+  border-top: 2px solid #575757;
+  padding: 10px 0;
+  bottom: 0;
     width: 100%;
+    position: fixed;
+
+}
+    
+.footer-nav {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+}
+
+.nav-link.active {
+  color: #004AAD;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 769px) {
+  body {
+      overflow: hidden;
   }
-  
-  .footer-nav {
-    max-width: 600px;
-    margin: 0 auto;
+
+  .main-content {
+      overflow-y: hidden;
   }
-  
-  .nav-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .nav-item {
-    text-align: center;
-  }
-  
-  .nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 18px;
-  }
-  
-  .nav-link.active {
-    color: #004AAD;
-  }
-  
-  .nav-icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-  }
-  
-  .visually-hidden {
-    position: sticky;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
+}
 
 @media (max-width: 991px) {
     .content-wrapper {
