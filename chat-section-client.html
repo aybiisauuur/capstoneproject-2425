@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="chat-section-client.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <section class="chat-container" aria-label="Live Chat Section">
+            <header class="chat-header" role="heading" aria-level="1">
+                <h1>Live Chat</h1>
+            </header>
+
+            <form class="chat-content" aria-label="Chat Form">
+                <label for="questions" class="questions-label">Questions</label>
+
+                <button type="button" class="question-button" id="election" aria-pressed="false">
+                    Election when?
+                </button>
+
+                <button type="button" class="question-button" id="registration" aria-pressed="false">
+                    Next registration when?
+                </button>
+
+                <label for="answer" class="visually-hidden">Your Answer</label>
+                <textarea id="answer" class="answer-textarea" placeholder="Answer here..."
+                    aria-label="Type your answer here" rows="5"></textarea>
+
+                <button type="submit" class="submit-button" aria-label="Submit your answer">
+                    Submit
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        $(document).ready(function () {
+
+            // Firebase configuration 
+            const firebaseConfig = {
+                apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+                authDomain: "senyashub.firebaseapp.com",
+                projectId: "senyashub",
+                storageBucket: "senyashub.firebasestorage.app",
+                messagingSenderId: "272537634617",
+                appId: "1:272537634617:web:2763ed67c759373fd30ae8",
+                measurementId: "G-R6MYXS2Z0G"
+            };
+
+            // Initialize Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            $('.question-button').on('click', function () {
+                $('.question-button').attr('aria-pressed', 'false');
+                $(this).attr('aria-pressed', 'true');
+                const questionText = $(this).text().trim();
+                $('#answer').focus().val('Responding to: ' + questionText);
+            });
+
+            $('.chat-content').on('submit', function (e) {
+                e.preventDefault();
+                const answer = $('#answer').val();
+                if (answer) {
+                    $('#answer').val('');
+                    const notification = $('<div>', {
+                        'class': 'notification',
+                        'aria-live': 'polite',
+                        text: 'Answer submitted successfully'
+                    });
+                    $(this).append(notification);
+                    setTimeout(() => notification.remove(), 3000);
+                }
+            });
+
+            $(document).keydown(function (e) {
+                if (e.key === 'Escape') {
+                    $('#answer').val('');
+                }
+            });
+
+
+            // Form submission
+            $('#client-form').on('submit', function (e) {
+                e.preventDefault();
+
+                const message = $('#client-message').val().trim();
+                if (!message) {
+                    alert("Please enter a message before submitting.");
+                    return;
+                }
+
+                // Save message to Firestore
+                db.collection("messages").add({
+                    message: message,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                    .then(() => {
+                        $('.confirmation-message').show().delay(3000).fadeOut();
+                        $('#client-message').val('');
+                    })
+                    .catch((error) => {
+                        console.error("Error writing document: ", error);
+                        alert("Failed to send the message. Please try again.");
+                    });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
