@@ -15,13 +15,6 @@
         <header class="app-header">
             <h1 class="app-title">SenyasHub</h1>
         </header>
-        <div class="search-container">
-            <div class="search-box">
-                <input type="search" class="search-input" placeholder="What would you like to learn?" aria-label="Search modules">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a62d0954dce249c2f05faacbad007e4cf7c999f140777f38537ca568c60a08f?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="Search" class="nav-icon" width="34" height="34">
-            </div>
-        </div>
-
         <main class="content-wrapper">
             <article class="intro-section">
                 <h2 class="intro-text">
@@ -81,12 +74,7 @@
         </footer>
     </section>
     <script>
-        $('.search-input').focus(function() {
-                $('.search-box').css('border-color', '#004AB3');
-            }).blur(function() {
-                $('.search-box').css('border-color', '#000');
-            });
-        
+
         $(document).ready(function() {
             $('.category-card').on('mouseenter focus', function() {
                 $(this).addClass('hover');
