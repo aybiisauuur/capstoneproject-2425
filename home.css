@@ -53,6 +53,63 @@ body {
     color: rgba(0, 0, 0, 0.5);
 }
 
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1293px;
+    width: 100%;
+    margin-top: 33px;
+    padding: 0 20px;
+    overflow-y: auto;
+}
+
+.phrase-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #000;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 27px 33px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.phrase-card:hover {
+    transform: translateY(-2px);
+}
+
+.video-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
 .main-content {
     display: flex;
     gap: 20px;
