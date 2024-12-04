@@ -7,29 +7,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="detector.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
 </head>
-    
+<body>
 <section class="detector-container">
     <header class="app-header">
-    <h1 class="app-title">Sign Language Detector</h1>
+        <h1 class="app-title">Sign Language Detector</h1>
     </header>
     
-<main class="main-content" role="main">
-    <p class="disclaimer-text" aria-label="Disclaimer message">
-        Disclaimer: This only works on basic greetings in Filipino Sign Language.
-    </p>
+    <main class="main-content" role="main">
+        <p class="disclaimer-text" aria-label="Disclaimer message">
+            Disclaimer: This only works on basic greetings in Filipino Sign Language.
+        </p>
 
-    <div class="video-container">
-        <div class="video-frame">
-            <button class="record-button" aria-label="Start recording">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8cc3c6171d6bdc26bfe3ced008cdce9eef30ffb876bd4f01694040aa0e1968d9?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="Record button icon">
-            </button>
+        <div class="video-container">
+            <div class="video-frame">
+                <button class="record-button" aria-label="Start recording">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8cc3c6171d6bdc26bfe3ced008cdce9eef30ffb876bd4f01694040aa0e1968d9?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="Record button icon">
+                </button>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
     
-      <footer class="app-footer">
+    <footer class="app-footer">
         <nav class="footer-nav">
             <ul class="nav-list">
                 <li class="nav-item">
@@ -39,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="modules-section.html" class="nav-link ">
+                    <a href="modules-section.html" class="nav-link">
                         <img src="book-fill.png" alt="" class="nav-icon">
                         <span>Modules</span>
                     </a>
@@ -65,11 +64,48 @@
             </ul>
         </nav>
     </footer>
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
 
+    <!-- Popup Modal -->
+    <div id="camera-modal" class="modal">
+        <div class="modal-content">
+            <p>This app requires access to your camera to detect sign language gestures. Do you allow access?</p>
+            <button id="accept-button">Allow</button>
+            <button id="decline-button">Decline</button>
+        </div>
+    </div>
+</section>
+
+<!-- Script -->
+<script>
+    $(document).ready(function () {
+        // Show modal when record button is clicked
+        $('.record-button').on('click', function () {
+            $('#camera-modal').fadeIn();
+        });
+
+        // Handle modal buttons
+        $('#accept-button').on('click', function () {
+            $('#camera-modal').fadeOut();
+            alert('Camera access granted!');
+            // Add logic to initialize the camera here
+        });
+
+        $('#decline-button').on('click', function () {
+            alert('Camera access is required to proceed.');
+            $('#camera-modal').fadeOut();
+        });
+
+        // Accessibility improvements
+        $(document).on('keydown', function (e) {
+            if (e.key === 'Tab') {
+                $('.nav-item:focus').addClass('focus-visible');
+            }
+        });
+
+        $(document).on('click', function () {
+            $('.focus-visible').removeClass('focus-visible');
+        });
+    });
             $('.record-button').on('click keypress', function(e) {
                 if (e.type === 'keypress' && e.which !== 13) return;
                 $(this).toggleClass('recording');
