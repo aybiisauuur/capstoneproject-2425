@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SenyasHub - Translator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+
+<body>
+    <header class="app-header">
+        <h1 class="app-title">SenyasHub - Translator</h1>
+    </header>
+
+    <main class="main-content" role="main">
+        <section class="translator-section" aria-label="Two-way Translator">
+            <h2>Two-Way Translator</h2>
+            <div class="qr-section">
+                <h3>Scan this QR Code:</h3>
+                <canvas id="qr-code"></canvas>
+                <p>Scan the QR code to open the client form.</p>
+            </div>
+
+            <div class="worker-side">
+                <h3>Client Responses:</h3>
+                <ul id="response-list">
+                    <!-- Responses will appear here -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2024 SenyasHub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            const qrLink = "https://example.com/client-form.html"; // Replace with the actual URL for the client form
+            const responseList = $('#response-list');
+
+            // Generate QR Code
+            QRCode.toCanvas(document.getElementById('qr-code'), qrLink, function (error) {
+                if (error) console.error(error);
+                console.log('QR Code generated!');
+            });
+
+            // Simulate receiving responses from the client
+            function simulateClientResponse() {
+                const responses = [
+                    "Hello, I need assistance.",
+                    "Where is the registration desk?",
+                    "Thank you for your help."
+                ];
+
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (index < responses.length) {
+                        const response = responses[index];
+                        const listItem = $('<li>').text(response);
+                        responseList.append(listItem);
+                        index++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 5000); // Simulate a new response every 5 seconds
+            }
+
+            simulateClientResponse();
+        });
+    </script>
+</body>
+
+</html>
