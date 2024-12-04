@@ -39,17 +39,15 @@
 
 .disclaimer-text {
   padding: 40px;
-  font-size: 35px;
+  font-size: 25px;
   color: #000000;
-
-    background-color: rgba(0, 64, 149, 0.5);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+  background-color: rgba(0, 64, 149, 0.5);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
-
 
 .video-container {
   background-color: rgba(217, 217, 217, 0.4);
@@ -154,7 +152,7 @@
       justify-content: center; /* Horizontally center */
       align-items: center; /* Vertically center */
   }
-  
+
   .modal-content {
       background: #fff;
       padding: 20px;
