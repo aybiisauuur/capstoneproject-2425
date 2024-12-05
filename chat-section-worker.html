@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="live-chat-worker.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"></script>
+
+</head>
+
+<body>
+    <section class="chat-container" aria-label="Live Chat Interface">
+        <header class="chat-header">
+            <h1>Live Chat</h1>
+        </header>
+
+        <main class="chat-content">
+            <div class="chat-sections">
+                <section class="qr-section" aria-label="QR Code Scanner">
+                    <div class="qr-content">
+                        <p class="qr-description">
+                            The Live Chat allows for two-way communication between the hearing and deaf individuals.
+                            <br><br>
+                            Please allow the deaf client to scan this code for the chat to appear on their end.
+                        </p>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1d81d65d36f8687cbceba074b8adb4edb1843d49c9df675e25ae2b7fe41a5f24?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="QR Code for chat access" class="qr-code">
+                    </div>
+                </section>
+
+                <section class="response-section" aria-label="Chat Response Area">
+                    <div class="response-content">
+                        <h2 class="response-title">RESPONSES</h2>
+                        <div class="response-box" role="log" aria-live="polite" aria-label="Chat messages"></div>
+                        <button class="clear-btn" aria-label="Clear all responses">Clear Responses</button>
+
+                        <h2 class="reply-title">REPLY BACK</h2>
+                        <p class="reply-instructions">
+                            You may use this feature to send a response back to the deaf client
+                            <br>(if modules do not have a SL equivalent of the response you are trying to communicate).
+                            <br>Please reply back in English, and keep your responses short and simple.
+                            <br>As much as possible, do limit the use of this feature and use sign language to
+                            communicate.
+                        </p>
+
+                        <form id="replyForm">
+                            <label for="replyInput" class="visually-hidden">Type your response</label>
+                            <textarea id="replyInput" class="reply-input" placeholder="Type Answer Here..."
+                                aria-label="Type your response"></textarea>
+                            <button type="submit" class="reply-btn">Reply</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <nav class="nav-container" aria-label="Main Navigation">
+            <div class="nav-content">
+                <div class="nav-items">
+                    <a href="#" class="nav-item" aria-label="Home">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/791e67e413b1707911b90549bcecc110fb316ae54f27f7593567211c97103373?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="" class="nav-icon">
+                        <span class="nav-text">Home</span>
+                    </a>
+                    <a href="#" class="nav-item" aria-label="Modules">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/afe9d2827b1553e8b884f3ec9ff187e79dfd6994a9bbd1fbf3b3c5424cbca8c0?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="" class="nav-icon">
+                        <span class="nav-text">Modules</span>
+                    </a>
+                    <a href="#" class="nav-item nav-active" aria-label="Chat" aria-current="page">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bfb3c3ac7898824b9888f8d99991874dee5ae3a4bcb48e09510f785519d61b57?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="" class="nav-icon">
+                        <span class="nav-text">Chat</span>
+                    </a>
+                    <a href="#" class="nav-item" aria-label="About">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="" class="nav-icon">
+                        <span class="nav-text">About</span>
+                    </a>
+                    <a href="#" class="nav-item" aria-label="Settings">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0fe3c07d5022664be8863064735d992c32e6240326ab3b70df2aacc4395fe61f?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="" class="nav-icon">
+                        <span class="nav-text">Settings</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            // Firebase configuration (use the same config as in client-form.html)
+            // Import the functions you need from the SDKs you need
+            //import { initializeApp } from "firebase/app";
+            //import { getAnalytics } from "firebase/analytics";
+            const firebaseConfig = {
+                apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+                authDomain: "senyashub.firebaseapp.com",
+                projectId: "senyashub",
+                storageBucket: "senyashub.firebasestorage.app",
+                messagingSenderId: "272537634617",
+                appId: "1:272537634617:web:2763ed67c759373fd30ae8",
+                measurementId: "G-R6MYXS2Z0G"
+            };
+
+            // Initialize Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            $('.clear-btn').click(function () {
+                $('.response-box').empty();
+                announceToScreenReader('All messages cleared');
+            });
+
+            $('#replyForm').submit(function (e) {
+                e.preventDefault();
+                const message = $('#replyInput').val();
+                if (message.trim()) {
+                    const messageElement = $('<p>').text(message);
+                    $('.response-box').append(messageElement);
+                    $('#replyInput').val('');
+                    announceToScreenReader('Message sent: ' + message);
+                }
+            });
+
+            function announceToScreenReader(message) {
+                const announcement = $('<div>').addClass('visually-hidden')
+                    .attr('aria-live', 'polite')
+                    .text(message);
+                $('body').append(announcement);
+                setTimeout(() => announcement.remove(), 1000);
+            }
+
+            $(document).keydown(function (e) {
+                if (e.key === 'Escape') {
+                    $('#replyInput').blur();
+                }
+            });
+
+            // Listen for new messages
+            db.collection("messages")
+                .orderBy("timestamp", "asc")
+                .onSnapshot((snapshot) => {
+                    const responseList = $('#response-list');
+                    responseList.empty(); // Clear the list
+
+                    snapshot.forEach((doc) => {
+                        const message = doc.data().message;
+                        const listItem = $('<li>').text(message);
+                        responseList.append(listItem);
+                    });
+                });
+        });
+    </script>
+</body>
+
+</html>
