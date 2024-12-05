@@ -2,8 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
-  }
+}
 
 body {
     font-family: 'Josefin Sans', sans-serif;
@@ -21,7 +20,7 @@ body {
 .app-header {
     background-color: rgba(217, 217, 217, 0.4);
     border-top: 2px solid #575757;
-    padding: 15px 20px;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -31,7 +30,6 @@ body {
     font-weight: 400;
     margin: 0;
 }
-
 
 .chat-content {
     flex: 1;
@@ -53,7 +51,7 @@ body {
 
 .qr-content {
     color: #000;
-    font-size: 32px;
+    font-size: 25px;
 }
 
 .qr-description {
@@ -62,7 +60,7 @@ body {
 
 .qr-code {
     width: 100%;
-    max-width: 400px;
+    max-width: 250px;
     height: auto;
     display: block;
 }
@@ -77,8 +75,9 @@ body {
 
 .response-title,
 .reply-title {
-    font-weight: 700;
+    font-weight: 300;
     margin-bottom: 10px;
+    font-size: 30px;
 }
 
 .response-box {
@@ -86,14 +85,13 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid #000;
-    height: 292px;
+    height: 250px;
     padding: 15px;
     overflow-y: auto;
     margin-bottom: 24px;
 }
 
-.clear-btn,
-.reply-btn {
+.clear-btn {
     background-color: #004AAD;
     color: #fff;
     border: none;
@@ -104,92 +102,89 @@ body {
     transition: background-color 0.3s;
 }
 
-.clear-btn:hover,
-.reply-btn:hover {
+.clear-btn:hover {
     background-color: #003c8a;
 }
 
-.clear-btn:focus,
-.reply-btn:focus {
+.clear-btn:focus {
     outline: 3px solid #0066ff;
     outline-offset: 2px;
 }
 
-.reply-instructions {
-    font-size: 15px;
-    margin: 12px 0;
-}
-
-.reply-input {
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #000;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 20px;
-    min-height: 150px;
-    margin-bottom: 27px;
-    font-family: inherit;
-    font-size: 15px;
-    resize: vertical;
-}
-
-    .app-footer {
-      background-color: #EEEEEE;
-      border-top: 2px solid #575757;
-      padding: 10px 0;
-      position: fixed; /* Keep it fixed at the bottom */
-      bottom: 0;
+.app-footer {
+    background-color: #EEEEEE;
+    border-top: 2px solid #575757;
+    padding: 5.7px;
+    bottom: 0;
       width: 100%;
-    }
-    
-    .footer-nav {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
-    .nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: space-between;
-    }
-    
-    .nav-item {
-      text-align: center;
-    }
-    
-    .nav-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: rgba(0, 0, 0, 0.4);
-      font-size: 18px;
-    }
-    
-    .nav-link.active {
-      color: #004AAD;
-    }
-    
-    .nav-icon {
-      width: 30px;
-      height: 30px;
-      margin-bottom: 5px;
-    }
-    
-    .visually-hidden {
-      position: sticky;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-    
+      position: fixed;
+  
+  }
+      
+  .footer-nav {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-item {
+    text-align: center;
+  }
+  
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+  }
+  
+  .nav-link.active {
+    color: #004AAD;
+  }
+  
+  .nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
+  @media (max-width: 991px) {
+      body {
+          overflow-y: auto;
+      }
+  
+      .main-content {
+          flex-direction: column;
+          max-height: none;
+      }
+
+      .nav-items {
+          flex-wrap: wrap;
+          gap: 20px;
+      }
+  }
+
 @media (max-width: 991px) {
     body {
         overflow: auto;
@@ -211,16 +206,6 @@ body {
     .response-section {
         flex: none;
         width: 100%;
-    }
-
-    .nav-content {
-        padding: 15px 20px;
-    }
-
-    .nav-items {
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
     }
 }
 
