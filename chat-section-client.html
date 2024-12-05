@@ -43,79 +43,45 @@
     </main>
 
     <script>
-        $(document).ready(function () {
+    $(document).ready(function () {
+        const firebaseConfig = {
+            apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+            authDomain: "senyashub.firebaseapp.com",
+            projectId: "senyashub",
+            storageBucket: "senyashub.firebasestorage.app",
+            messagingSenderId: "272537634617",
+            appId: "1:272537634617:web:2763ed67c759373fd30ae8",
+            measurementId: "G-R6MYXS2Z0G"
+        };
 
-            // Firebase configuration 
-            const firebaseConfig = {
-                apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
-                authDomain: "senyashub.firebaseapp.com",
-                projectId: "senyashub",
-                storageBucket: "senyashub.firebasestorage.app",
-                messagingSenderId: "272537634617",
-                appId: "1:272537634617:web:2763ed67c759373fd30ae8",
-                measurementId: "G-R6MYXS2Z0G"
-            };
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
 
-            // Initialize Firebase
-            const app = firebase.initializeApp(firebaseConfig);
-            const db = firebase.firestore();
+        $('.chat-content').on('submit', function (e) {
+            e.preventDefault();
 
-            $('.question-button').on('click', function () {
-                $('.question-button').attr('aria-pressed', 'false');
-                $(this).attr('aria-pressed', 'true');
-                const questionText = $(this).text().trim();
-                $('#answer').focus().val('Responding to: ' + questionText);
-            });
-
-            $('.chat-content').on('submit', function (e) {
-                e.preventDefault();
-                const answer = $('#answer').val();
-                if (answer) {
-                    $('#answer').val('');
-                    const notification = $('<div>', {
-                        'class': 'notification',
-                        'aria-live': 'polite',
-                        text: 'Answer submitted successfully'
-                    });
-                    $(this).append(notification);
-                    setTimeout(() => notification.remove(), 3000);
-                }
-            });
-
-            $(document).keydown(function (e) {
-                if (e.key === 'Escape') {
-                    $('#answer').val('');
-                }
-            });
-
-
-            // Form submission
-            $('#client-form').on('submit', function (e) {
-                e.preventDefault();
-
-                const message = $('#client-message').val().trim();
-                if (!message) {
-                    alert("Please enter a message before submitting.");
-                    return;
-                }
-
-                // Save message to Firestore
+            const answer = $('#answer').val().trim();
+            if (answer) {
+                // Write to Firestore
                 db.collection("messages").add({
-                    message: message,
+                    message: answer,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 })
-                    .then(() => {
-                        $('.confirmation-message').show().delay(3000).fadeOut();
-                        $('#client-message').val('');
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                        alert("Failed to send the message. Please try again.");
-                    });
-            });
-
+                .then(() => {
+                    $('#answer').val('');
+                    alert("Message sent!");
+                })
+                .catch((error) => {
+                    console.error("Error writing message: ", error);
+                    alert("Failed to send message. Try again.");
+                });
+            } else {
+                alert("Please enter a message before submitting.");
+            }
         });
-    </script>
+    });
+</script>
 </body>
 
 </html>
