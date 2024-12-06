@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js"></script>
-
+    <script src="chat-section-worker.js"></script>
 </head>
 
 <body>
@@ -28,13 +28,13 @@
                             <br><br>
                             Please allow the deaf client to scan this code for the chat to appear on their end.
                         </p>
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1d81d65d36f8687cbceba074b8adb4edb1843d49c9df675e25ae2b7fe41a5f24?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                        <img src="SCAN ME WORKING.png"
                             alt="QR Code for chat access" class="qr-code">
                     </div>
                 </section>
 
                 <section class="response-section" aria-label="Chat Response Area">
-                    <div class="response-content">
+                    <div class="response-content" id = "#messagesContainer">
                         <h2 class="response-title">RESPONSES</h2>
                         <div class="response-box" role="log" aria-live="polite" aria-label="Chat messages"></div>
                         <button class="clear-btn" aria-label="Clear all responses">Clear Responses</button>
