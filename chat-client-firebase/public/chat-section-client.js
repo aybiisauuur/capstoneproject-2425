@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+//import { initializeApp } from "firebase/app";
+//import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
  apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
@@ -48,11 +48,17 @@ document.querySelector(".chat-content").addEventListener("submit", async (e) => 
     const answerInput = document.getElementById("answer");
     const message = answerInput.value.trim();
 
-    if (message) {
-        try {
+    firebase.database().ref("messages").push().set({
+        sender: "client",
+        message: message,
+        timestamp: serverTimestamp()
+    });
+   
+    /*if (message) {
+       try {
             await addDoc(messagesRef, {
-                sender: "client",
-                message: message,
+               sender: "client",
+            message: message,
                 timestamp: serverTimestamp()
             });
             answerInput.value = ""; // Clear input field
@@ -63,7 +69,7 @@ document.querySelector(".chat-content").addEventListener("submit", async (e) => 
     } else {
         alert("Please enter a message before submitting.");
     }
-});
+});*/
 
 // Quick Message Buttons
 document.querySelectorAll(".question-button").forEach((button) => {
@@ -72,3 +78,5 @@ document.querySelectorAll(".question-button").forEach((button) => {
         document.getElementById("answer").value = quickMessage;
     });
 });
+
+})
