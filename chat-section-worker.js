@@ -1,21 +1,23 @@
-// Import Firebase SDKs
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getFirestore, collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
-// Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+ apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
     authDomain: "senyashub.firebaseapp.com",
     projectId: "senyashub",
-    storageBucket: "senyashub.appspot.com",
+    storageBucket: "senyashub.firebasestorage.app",
     messagingSenderId: "272537634617",
     appId: "1:272537634617:web:2763ed67c759373fd30ae8",
-    measurementId: "G-R6MYXS2Z0G"
+    measurementId: "G-R6MYXS2Z0G",
+  databaseURL: "https://senyashub-default-rtdb.firebaseio.com/",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
 
 // DOM elements
 const responseBox = document.querySelector('.response-box');
