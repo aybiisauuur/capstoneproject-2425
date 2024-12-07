@@ -20,7 +20,7 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 // DOM elements
-const responseBox = document.querySelector('.response-box');
+const responseBox = document.querySelector('.response-section');
 const clearBtn = document.querySelector('.clear-btn');
 
 // Real-time listener for Firestore
