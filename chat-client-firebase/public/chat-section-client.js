@@ -1,82 +1,84 @@
-//import { initializeApp } from "firebase/app";
-//import { getDatabase } from "firebase/database";
+// Import Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
+// Firebase Configuration
 const firebaseConfig = {
- apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
-    authDomain: "senyashub.firebaseapp.com",
-    projectId: "senyashub",
-    storageBucket: "senyashub.firebasestorage.app",
-    messagingSenderId: "272537634617",
-    appId: "1:272537634617:web:2763ed67c759373fd30ae8",
-    measurementId: "G-R6MYXS2Z0G",
+  apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+  authDomain: "senyashub.firebaseapp.com",
+  projectId: "senyashub",
+  storageBucket: "senyashub.firebasestorage.app",
+  messagingSenderId: "272537634617",
+  appId: "1:272537634617:web:2763ed67c759373fd30ae8",
+  measurementId: "G-R6MYXS2Z0G",
   databaseURL: "https://senyashub-default-rtdb.firebaseio.com/",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-// Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
+const auth = getAuth(app);
 
-// Anonymous Authentication
+// Authenticate User Anonymously
 signInAnonymously(auth)
-    .then(() => console.log("Signed in anonymously"))
-    .catch((error) => console.error("Authentication error: ", error));
+  .then(() => console.log("Signed in anonymously"))
+  .catch((error) => console.error("Authentication error:", error));
 
-// Firestore References
-const messagesRef = collection(db, "messages");
-
-// Listen for Real-Time Updates
+// References
 const messagesContainer = document.getElementById("messagesContainer");
+const messageInput = document.getElementById("answer");
+const chatForm = document.querySelector(".chat-content");
+const questionButtons = document.querySelectorAll(".question-button");
 
-const messagesQuery = query(messagesRef, orderBy("timestamp", "asc"));
-onSnapshot(messagesQuery, (snapshot) => {
-    messagesContainer.innerHTML = ""; // Clear the container
-    snapshot.forEach((doc) => {
-        const { sender, message } = doc.data();
-        const messageElement = document.createElement("p");
-        messageElement.textContent = `${sender}: ${message}`;
-        messagesContainer.appendChild(messageElement);
-    });
+// Reference to messages in the database
+const messagesRef = ref(database, "messages");
+
+// Function to Render Messages in the UI
+const renderMessages = (snapshot) => {
+  messagesContainer.innerHTML = ""; // Clear previous messages
+  snapshot.forEach((childSnapshot) => {
+    const { sender, message } = childSnapshot.val();
+    const messageElement = document.createElement("p");
+    messageElement.classList.add(sender === "Client" ? "client-message" : "worker-message");
+    messageElement.textContent = `${sender}: ${message}`;
+    messagesContainer.appendChild(messageElement);
+  });
+  messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll to bottom
+};
+
+// Listen for New Messages in Real-Time
+onValue(messagesRef, renderMessages);
+
+// Send Message
+chatForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const message = messageInput.value.trim();
+
+  if (message) {
+    const newMessageRef = push(messagesRef); // Create a new message
+    set(newMessageRef, {
+      sender: "Client",
+      message: message,
+      timestamp: Date.now(),
+    })
+      .then(() => {
+        messageInput.value = ""; // Clear the input field
+        messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+      })
+      .catch((error) => {
+        console.error("Error sending message:", error);
+        alert("Failed to send message. Please try again.");
+      });
+  } else {
+    alert("Please type a message before sending.");
+  }
 });
 
-// Sending Messages
-document.querySelector(".chat-content").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const answerInput = document.getElementById("answer");
-    const message = answerInput.value.trim();
-
-    firebase.database().ref("messages").push().set({
-        sender: "client",
-        message: message,
-        timestamp: serverTimestamp()
-    });
-   
-    /*if (message) {
-       try {
-            await addDoc(messagesRef, {
-               sender: "client",
-            message: message,
-                timestamp: serverTimestamp()
-            });
-            answerInput.value = ""; // Clear input field
-        } catch (error) {
-            console.error("Error sending message: ", error);
-            alert("Failed to send message. Try again.");
-        }
-    } else {
-        alert("Please enter a message before submitting.");
-    }
-});*/
-
-// Quick Message Buttons
-document.querySelectorAll(".question-button").forEach((button) => {
-    button.addEventListener("click", () => {
-        const quickMessage = button.textContent;
-        document.getElementById("answer").value = quickMessage;
-    });
+// Handle Quick Message Buttons
+questionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const quickMessage = button.textContent.trim();
+    messageInput.value = quickMessage;
+  });
 });
-
-})

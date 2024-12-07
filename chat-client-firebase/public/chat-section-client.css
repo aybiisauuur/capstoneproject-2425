@@ -1,6 +1,7 @@
 :root {
     --primary-color: rgb(0, 74, 173);
     --primary-color-alpha: rgba(0, 74, 173, 0.6);
+    --secondary-color: #f0f0f0;
     --text-color: #000;
     --white: #fff;
     --shadow-color: rgba(0, 0, 0, 0.25);
@@ -48,7 +49,7 @@ body {
 
 .chat-content {
     display: flex;
-    margin-top: 344px;
+    margin-top: 20px;
     width: 100%;
     flex-direction: column;
     font-size: 15px;
@@ -128,6 +129,34 @@ body {
     background-color: var(--primary-color-alpha);
     outline: 2px solid var(--text-color);
     outline-offset: 2px;
+}
+
+/* Adjusting message alignment for client and worker */
+.messages-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+}
+
+.message-client {
+    align-self: flex-start;
+    background-color: rgba(0, 74, 173, 0.2); 
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message-worker {
+    align-self: flex-end;
+    background-color: var(--primary-color);
+    padding: 12px;
+    border-radius: 10px;
+    color: var(--white);
+    max-width: 70%;
+    word-wrap: break-word;
 }
 
 .visually-hidden {
