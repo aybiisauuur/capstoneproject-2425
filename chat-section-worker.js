@@ -1,15 +1,13 @@
-$(document).ready(function () {
-    // Firebase configuration (use the same config as in client-form.html)
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "firebase/app";
-    import { getFirestore, collection, addDoc, onSnapshot } from "firebase/firestore";
-    import { getAuth, signInAnonymously } from "firebase/auth";
+// Import Firebase SDKs
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getFirestore, collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
     authDomain: "senyashub.firebaseapp.com",
     projectId: "senyashub",
-    storageBucket: "senyashub.firebasestorage.app",
+    storageBucket: "senyashub.appspot.com",
     messagingSenderId: "272537634617",
     appId: "1:272537634617:web:2763ed67c759373fd30ae8",
     measurementId: "G-R6MYXS2Z0G"
@@ -18,46 +16,27 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const auth = getAuth(app);
-const messagesCollection = collection(db, "messages");
 
-function sendMessage(message) {
-    return addDoc(messagesCollection), { text: message, timestamp: Date.now()}
-}
+// DOM elements
+const responseBox = document.querySelector('.response-box');
+const clearBtn = document.querySelector('.clear-btn');
 
-function subscribeToMessages(callback) {
-    onSnapshot(messagesCollection, (snapshot) => {
-        callback(snapshot.docs.map((doc) => doc.data()));
+// Real-time listener for Firestore
+const messagesRef = collection(db, "messages");
+const messagesQuery = query(messagesRef, orderBy("timestamp", "asc"));
+
+onSnapshot(messagesQuery, (snapshot) => {
+    responseBox.innerHTML = ""; // Clear previous messages
+    snapshot.forEach((doc) => {
+        const { sender, message } = doc.data();
+        const messageItem = document.createElement('p');
+        messageItem.textContent = `${sender}: ${message}`;
+        responseBox.appendChild(messageItem);
     });
-}
-
-subscribeToMessages((messages)=> {
-    console.log(messages);
 });
 
-const $messagesContainer = $('#messagesContainer');
-$messagesContainer.empty();
-messages.forEach((message) => {
-    $messagesContainer.append(`<p>${message.text}</p>`);
-});
 
-//tapusin mo toh
-
-/* Listen for real-time updates from Firestore
-db.collection("messages")
-    .orderBy("timestamp", "asc")
-    .onSnapshot((snapshot) => {
-        const responseBox = $('.response-box');
-        responseBox.empty(); // Clear previous messages
-
-        snapshot.forEach((doc) => {
-            const message = doc.data().message;
-            const messageItem = $('<p>').text(message);
-            responseBox.append(messageItem);
-        });
-    });
-
-$('.clear-btn').on('click', function () {
-    $('.response-box').empty();
-});*/
+// Clear messages on button click
+clearBtn.addEventListener('click', () => {
+    responseBox.innerHTML = "";
 });
