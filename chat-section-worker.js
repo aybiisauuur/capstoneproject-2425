@@ -1,44 +1,84 @@
-//import { initializeApp } from "firebase/app";
-//import { getDatabase } from "firebase/database";
+// Import Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
+// Firebase Configuration
 const firebaseConfig = {
- apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
-    authDomain: "senyashub.firebaseapp.com",
-    projectId: "senyashub",
-    storageBucket: "senyashub.firebasestorage.app",
-    messagingSenderId: "272537634617",
-    appId: "1:272537634617:web:2763ed67c759373fd30ae8",
-    measurementId: "G-R6MYXS2Z0G",
+  apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+  authDomain: "senyashub.firebaseapp.com",
+  projectId: "senyashub",
+  storageBucket: "senyashub.firebasestorage.app",
+  messagingSenderId: "272537634617",
+  appId: "1:272537634617:web:2763ed67c759373fd30ae8",
+  measurementId: "G-R6MYXS2Z0G",
   databaseURL: "https://senyashub-default-rtdb.firebaseio.com/",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-// Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
+const auth = getAuth(app);
 
-// DOM elements
-const responseBox = document.querySelector('.response-section');
-const clearBtn = document.querySelector('.clear-btn');
+// Authenticate User Anonymously
+signInAnonymously(auth)
+  .then(() => console.log("Signed in anonymously"))
+  .catch((error) => console.error("Authentication error:", error));
 
-// Real-time listener for Firestore
-const messagesRef = collection(db, "messages");
-const messagesQuery = query(messagesRef, orderBy("timestamp", "asc"));
+// References
+const messagesContainer = document.getElementById("messagesContainer");
+const messageInput = document.getElementById("answer");
+const chatForm = document.querySelector(".chat-content");
+const questionButtons = document.querySelectorAll(".question-button");
 
-onSnapshot(messagesQuery, (snapshot) => {
-    responseBox.innerHTML = ""; // Clear previous messages
-    snapshot.forEach((doc) => {
-        const { sender, message } = doc.data();
-        const messageItem = document.createElement('p');
-        messageItem.textContent = `${sender}: ${message}`;
-        responseBox.appendChild(messageItem);
-    });
+// Reference to messages in the database
+const messagesRef = ref(database, "messages");
+
+// Function to Render Messages in the UI
+const renderMessages = (snapshot) => {
+  messagesContainer.innerHTML = ""; // Clear previous messages
+  snapshot.forEach((childSnapshot) => {
+    const { sender, message } = childSnapshot.val();
+    const messageElement = document.createElement("p");
+    messageElement.classList.add(sender === "Client" ? "client-message" : "worker-message");
+    messageElement.textContent = `${sender}: ${message}`;
+    messagesContainer.appendChild(messageElement);
+  });
+  messagesContainer.scrollTop = messagesContainer.scrollHeight; // Auto-scroll to bottom
+};
+
+// Listen for New Messages in Real-Time
+onValue(messagesRef, renderMessages);
+
+// Send Message
+chatForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const message = messageInput.value.trim();
+
+  if (message) {
+    const newMessageRef = push(messagesRef); // Create a new message
+    set(newMessageRef, {
+      sender: "Client",
+      message: message,
+      timestamp: Date.now(),
+    })
+      .then(() => {
+        messageInput.value = ""; // Clear the input field
+        messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+      })
+      .catch((error) => {
+        console.error("Error sending message:", error);
+        alert("Failed to send message. Please try again.");
+      });
+  } else {
+    alert("Please type a message before sending.");
+  }
 });
 
-
-// Clear messages on button click
-clearBtn.addEventListener('click', () => {
-    responseBox.innerHTML = "";
+// Handle Quick Message Buttons
+questionButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const quickMessage = button.textContent.trim();
+    messageInput.value = quickMessage;
+  });
 });
