@@ -51,26 +51,28 @@
   }
   
   .chat-container {
-    max-width: 480px;
+    max-width: 550px;
+    max-height: 1000px;
     width: 100%;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 30px;
     box-shadow: 0 4px 6px var(--shadow-color);
     border-radius: 10px;
+    margin-right: 5%;
   }
   
   .chat-header {
     background-color: rgba(217, 217, 217, 0.4);
     border-top: 2px solid #575757;
     width: 100%;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
   }
   
   .chat-header h1 {
-    font-size: 20px;
+    font-size: 24px;
     color: var(--text-color);
     font-weight: 400;
   }
@@ -78,8 +80,8 @@
   .chat-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 25px;
+    margin-top: 25px;
   }
   
   .questions-label {
@@ -125,13 +127,27 @@
   .submit-button:focus {
     background-color: var(--primary-color-alpha);
   }
+  .clear-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .clear-button:hover,
+  .clear-button:focus {
+    background-color: var(--primary-color-alpha);
+  }
   
   .messages-box {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-    max-height: 300px;
+    gap: 15px;
+    padding: 20px;
+    max-height: 400px;
     overflow-y: auto;
   }
 

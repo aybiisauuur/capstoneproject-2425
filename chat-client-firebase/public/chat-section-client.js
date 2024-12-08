@@ -1,6 +1,6 @@
 // Import Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+import { getDatabase, ref, push, set, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 
 // Firebase Configuration
@@ -30,6 +30,7 @@ const messagesContainer = document.getElementById("messagesContainer");
 const messageInput = document.getElementById("answer");
 const chatForm = document.querySelector(".chat-content");
 const questionButtons = document.querySelectorAll(".question-button");
+const clearButton = document.querySelector(".clear-button");
 
 // Reference to messages in the database
 const messagesRef = ref(database, "messages");
@@ -81,4 +82,22 @@ questionButtons.forEach((button) => {
     const quickMessage = button.textContent.trim();
     messageInput.value = quickMessage;
   });
+});
+
+// Function to Clear All Messages
+const clearMessages = () => {
+  remove(messagesRef)
+    .then(() => {
+      alert("All messages have been cleared!");
+      messagesContainer.innerHTML = ""; // Clear the UI
+    })
+    .catch((error) => {
+      console.error("Error clearing messages:", error);
+    });
+};
+
+// Attach Click Event to Clear Chat Button
+clearButton.addEventListener("click", (e) => {
+  e.preventDefault(); // Prevent default button behavior
+  clearMessages();
 });
