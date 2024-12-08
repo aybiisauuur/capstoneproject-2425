@@ -22,10 +22,11 @@
   
   .main-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    padding: 30px;
+    padding-left: 450px;
+    border-radius: 10px;
   }
   
   .qr-section {
@@ -40,7 +41,7 @@
   }
   
   .qr-description {
-    font-size: 16px;
+    font-size: 30px;
     color: var(--text-color);
     margin-bottom: 20px;
   }
@@ -56,7 +57,7 @@
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     box-shadow: 0 4px 6px var(--shadow-color);
     border-radius: 10px;
   }
