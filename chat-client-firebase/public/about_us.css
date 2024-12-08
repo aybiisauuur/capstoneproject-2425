@@ -26,10 +26,10 @@ html, body {
 
 .app-title {
   color: #000;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 400;
   margin: 0;
-  font: 400 20px 'Josefin Sans', sans-serif;
+  font: 500 30px 'Josefin Sans', sans-serif;
 
 }
 .content-wrapper {
@@ -54,22 +54,40 @@ html, body {
 }
 
 .main-content {
-  color: #000;
-  font: 400 20px 'Arimo', sans-serif;
-  overflow-y: auto;
-  padding-right: 20px;
+  padding: 5px 5px;
+  align-items: left;
+  color: var(--text-color);
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  display: grid;
+  justify-content: left;
+  align-items: left;
+  height: 100%;
+  margin-right: 5%;
+  margin-left: 9%;
 }
 
 .section-title {
-  font: 36px 'Josefin Sans', sans-serif;
-  margin-bottom: 23px;
+  font: 38px 'Josefin Sans', sans-serif;
+  margin-bottom: -1%px;
+  margin-top: 20%;}
+
+.description1 {
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 0; /* Added to bring the element back to a normal position */
 }
 
-.description {
-  margin: 28px 0;
+.description2 {
+  margin-top: -10%;
+  margin-bottom: -10px;
+  align-items: center;
 }
-
 .app-info {
+  margin-bottom: 10%;
+  margin-top: -5%;
   margin-top: 40px;
   padding-left: 11px;
 }
@@ -79,7 +97,7 @@ html, body {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 .fsl-image {
@@ -125,9 +143,9 @@ html, body {
 }
 
 .nav-icon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 5px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
 }
 
 .visually-hidden {

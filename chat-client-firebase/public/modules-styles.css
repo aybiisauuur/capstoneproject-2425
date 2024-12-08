@@ -34,7 +34,7 @@ body {
 
 .app-title {
     color: #000;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
     margin: 0;
 }
@@ -51,30 +51,45 @@ body {
 }
 
 .intro-text {
+    padding: .5px 30px;
+    align-items: center;
     color: var(--text-color);
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 400;
-    margin-bottom: 40px;
+    margin-bottom: 10%;
+    margin-top: -5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 30%;
+    margin-left: -50%;
 }
 
 .categories-section {
     display: grid;
     gap: 20px;
-    max-width: 590px;
-    margin-left: auto;
+    max-width: 120px;
+    margin-left: auto; /* Centering horizontally */
+    margin-right: 20%; /* To move it to the left a bit */
 }
 
 .category-card {
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: var(--card-shadow);
-    padding: 25px 30px;
+    padding: 50px 50px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 50px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
+    max-width: 500px;
+    margin-left: -5%; /* Centering horizontally */
+    margin-right: -5%; /* Optional: To limit the width of the card */
+    margin-bottom: 20%
 }
+
 
 .category-card:hover,
 .category-card:focus,
@@ -104,7 +119,7 @@ body {
 
 .category-title {
     color: var(--text-color);
-    font-size: 28px;
+    font-size: 35px;
     font-weight: 400;
     margin: 0;
 }
@@ -151,9 +166,9 @@ body {
 }
 
 .nav-icon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 5px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
 }
 
 .visually-hidden {
@@ -218,6 +233,7 @@ body {
 
     .info-panel,
     .recent-section {
+        position: center;
         flex: none;
         width: 100%;
         max-width: none;

@@ -65,7 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Distribute space evenly */
-  padding: 30px;
+  padding: 50px 30px 10px; /* Increased top padding */
   border-radius: 10px;
   box-shadow: 0 4px 6px var(--shadow-color);
   margin: 0; 
@@ -75,7 +75,7 @@ body {
   background-color: rgba(217, 217, 217, 0.4);
   border-top: 2px solid #575757;
   width: 100%;
-  padding: 25px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -94,23 +94,23 @@ body {
 }
 
 .client-message {
-  font-size: 20px; /* Adjusted size for client messages */
-  color: #004AAD; /* Color changed to blue for client messages */
+  font-size: 27px; /* Adjusted size for client messages */
+  color: #ffffff; /* Color changed to blue for client messages */
   padding: 10px;
-  border-radius: 10px;
-  background-color: rgba(217, 217, 217, 0.4);
-  margin-bottom: 10px;
+  border-radius: 20px;
+  background-color: rgb(64, 58, 253);
+  margin-bottom: 5px;
 }
 
 .questions-label {
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 25px;
 }
 
 .question-button {
   border-radius: 10px;
   background-color: var(--primary-color-alpha);
-  font-size: 17px;
+  font-size: 23px;
   padding: 12px 17px;
   border: none;
   color: var(--white);
@@ -173,7 +173,7 @@ body {
 .app-footer {
   background-color: #EEEEEE;
   border-top: 2px solid #575757;
-  padding: 10px;
+  padding: 20px;
   bottom: 0;
   width: 100%;
   position: fixed;
@@ -210,8 +210,8 @@ body {
 }
 
 .nav-icon {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 5px;
 }
 
