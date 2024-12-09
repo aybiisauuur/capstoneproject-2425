@@ -22,10 +22,11 @@ body {
 
 .main-content {
   display: flex;
-  flex-direction: row; /* Arrange QR and chat side by side */
-  justify-content: space-between; /* Ensure even spacing between elements */
+  flex-direction: column; /* Arrange QR and chat side by side */
+  justify-content: center; /* Ensure even spacing between elements */
   align-items: flex-start; /* Align content at the top */
   padding: 30px;
+  padding-left: 300px;
   gap: 20px; /* Space between QR and chat */
 }
 
@@ -44,7 +45,7 @@ body {
 }
 
 .qr-description {
-  font-size: 20px;
+  font-size: 30px;
   color: var(--text-color);
   margin-bottom: 20px;
   text-align: center; /* Center the text inside */
