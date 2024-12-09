@@ -54,7 +54,7 @@ body {
     padding: .5px 30px;
     align-items: center;
     color: var(--text-color);
-    font-size: 40px;
+    font-size: 29px;
     font-weight: 400;
     margin-bottom: 10%;
     margin-top: -5%;
@@ -62,8 +62,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-right: 30%;
-    margin-left: -50%;
+    margin-right: 20%;
+    margin-left: -5%;
 }
 
 .categories-section {
@@ -77,14 +77,14 @@ body {
 .category-card {
     border-radius: 20px;
     box-shadow: var(--card-shadow);
-    padding: 50px 50px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     gap: 50px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-decoration: none;
-    max-width: 500px;
+    max-width: 320px;
     margin-left: -5%; /* Centering horizontally */
     margin-right: -5%; /* Optional: To limit the width of the card */
     margin-bottom: 20%
@@ -119,7 +119,7 @@ body {
 
 .category-title {
     color: var(--text-color);
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 400;
     margin: 0;
 }
