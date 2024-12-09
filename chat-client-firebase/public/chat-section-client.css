@@ -42,7 +42,7 @@ body {
 
 .main-content {
   flex: 1;
-    padding: 41px 20px;
+    padding: 18px 20px;
     max-width: 1257px;
     margin: 0 auto;
     width: 100%;
@@ -53,7 +53,7 @@ body {
 
 .chat-content {
   flex: 1;
-  padding: 41px 20px;
+  padding: 80px 20px;
   max-width: 1257px;
   margin: 0 auto;
   width: 100%;
@@ -71,11 +71,12 @@ body {
 
 .qr-content {
   color: #000;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .qr-description {
-  margin-bottom: 16px;
+  margin-bottom: 40px;
+  margin-top: 50px;
 }
 
 .qr-code {
@@ -178,8 +179,9 @@ body {
 .clear-button {
   background-color: var(--primary-color);
   color: var(--white);
+  margin-top: 190px;
   border: none;
-  padding: 5px 10px; /* Increased padding */
+  padding: 15px 10px; /* Increased padding */
   border-radius: 10px;
   font-size: 15px; /* Increased from 18px */
   cursor: pointer;
