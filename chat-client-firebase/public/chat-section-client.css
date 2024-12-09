@@ -90,7 +90,7 @@ body {
 .chat-content {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 12px;
   margin-top: 25px;
   overflow-y: auto; /* Add scrolling if content exceeds container */
 }
