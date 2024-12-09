@@ -20,6 +20,26 @@ body {
   overflow-x: hidden;
 }
 
+.modules {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  background-color: rgba(217, 217, 217, 0.4);
+  border-top: 2px solid #575757;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.app-title {
+  color: #000;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0;
+}
+
 .main-content {
   display: flex;
   flex-direction: column; /* Arrange QR and chat side by side */
