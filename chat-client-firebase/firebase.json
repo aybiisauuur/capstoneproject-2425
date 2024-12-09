@@ -3,7 +3,7 @@
     "public": "public",
     "cleanUrls": true,
     "rewrites": [
-      { "source": "/", "destination": "/chat-section-client.html" }
+      { "source": "/", "destination": "/chat-client.html" }
     ]
   }
 }
