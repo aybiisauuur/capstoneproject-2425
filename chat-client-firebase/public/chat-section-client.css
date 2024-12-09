@@ -222,14 +222,13 @@ body {
   }
 }
 
-
 .app-footer {
   background-color: #EEEEEE;
   border-top: 2px solid #575757;
-  padding: 8px;
+  padding: 10px 0;
+  position: fixed; /* Keep it fixed at the bottom */
   bottom: 0;
   width: 100%;
-  position: fixed;
 }
 
 .footer-nav {
@@ -263,13 +262,13 @@ body {
 }
 
 .nav-icon {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin-bottom: 5px;
 }
 
 .visually-hidden {
-  position: absolute;
+  position: sticky;
   width: 1px;
   height: 1px;
   padding: 0;
