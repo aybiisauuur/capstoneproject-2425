@@ -19,7 +19,7 @@ body {
     padding: 0;
 }
 
-.modules {
+.modules{
     display: flex;
     flex-direction: column;
     height: 100vh;
