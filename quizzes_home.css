@@ -1,0 +1,112 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.modules {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    background-color: rgba(217, 217, 217, 0.4);
+    border-top: 2px solid #575757;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.app-title {
+    color: #000;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Add spacing between child elements */
+    padding: 20px;
+    width: 100%; /* Full-width container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.intro-text {
+    text-align: center; /* Center the text */
+    color: var(--text-color, #000); /* Use a fallback for the variable */
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -9%;
+}
+
+.categories-section {
+    display: flex;
+    flex-direction: column; /* Arrange categories in a column */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Add spacing between items */
+    max-width: 100%; /* Prevent overflowing horizontally */
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column; /* Ensure column alignment inside each card */
+    align-items: center; /* Center content within the card */
+    justify-content: center; /* Center content vertically */
+    border-radius: 20px;
+    box-shadow: var(--card-shadow, 0 4px 6px rgba(0, 0, 0, 0.1)); /* Use a fallback */
+    padding: 20px;
+    width: 100%; /* Make the card responsive */
+    max-width: 320px; /* Set a maximum width to prevent overlap */
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.category-card:hover,
+.category-card:focus {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow, 0 6px 8px rgba(0, 0, 0, 0.15)); /* Use a fallback */
+    outline: none;
+}
+
+.category-card.light {
+    background: rgba(0, 74, 173, 0.4);
+}
+
+.category-card.medium {
+    background: rgba(0, 74, 173, 0.5);
+}
+
+.category-card.dark {
+    background: rgba(0, 74, 173, 0.6);
+}
+.category-card.bit_dark {
+    background: rgba(0, 74, 173, 0.6);
+}
+
+.category-icon {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px; /* Add spacing below the icon */
+}
+
+.category-title {
+    color: var(--text-color, #000000); /* Use a fallback */
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+}

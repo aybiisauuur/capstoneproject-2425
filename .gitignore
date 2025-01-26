@@ -13,3 +13,5 @@ __pycache__/
 
 #ignore keypoint values
 MP_Data/
+
+.codegpt
