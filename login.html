@@ -17,28 +17,50 @@
         <header class="app-header">
             <h1 class="app-title">Log In</h1>
         </header>
+        <div class="intro-text-container">
+            <h2 class="intro-text">SenyasHub</h2>
+        </div>
+
+        <!-- User Email -->
         <div class="search-container">
-            <div class="search-box">
-                <input type="search" class="search-input" placeholder="Email"
-                    aria-label="userID">
+            <div class="input-wrapper">
+                <img src="pngegg (28) 1.png" alt="User Icon" class="icon">
+                <input type="search" class="search-input" placeholder="User Email" aria-label="userID">
             </div>
         </div>
+
+        <!-- Password -->
         <div class="password-container">
-            <div class="password-box">
-                <input type="password" class="password-input" placeholder="Password"
-                    aria-label="password">
+            <div class="input-wrapper">
+                <img src="pngegg (29) 1.png" alt="Password Icon" class="icon">
+                <input type="password" class="password-input" placeholder="Password" aria-label="password">
+                <button type="button" class="toggle-password">&#128065;</button>
             </div>
         </div>
-        <main class="content-wrapper">
-            <article class="intro-section">
-                <h2 class="intro-text">
-                    SenyasHub
-                </h2>
-            </article>
-    <section class="Sign_In-section" aria-label="FSL Categories">
-        <a class="Sign_In-card light" tabindex="0" aria-label="Go to FSL Greetings section">
-            <h3 class="Sign_In-title">Sign In</h3>
-            </a>
+        </div>
+            <main class="content-wrapper">
+                <section class="Sign_In-section" aria-label="FSL Categories">
+                    <button class="Sign_In-card light">
+                        <h3 class="Sign_In-title">Sign up</h3>
+                    </button>
+                    <div class="link-container">
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <a href="register.html" class="new-user">New user? Register here</a>
+                    </div>
+                </section>
+            </main>
+        </section>
+    
+        <script>
+            // Toggle password visibility
+            document.querySelectorAll('.toggle-password').forEach(button => {
+                button.addEventListener('click', function () {
+                    const input = this.previousElementSibling;
+                    input.type = input.type === 'password' ? 'text' : 'password';
+                    this.textContent = input.type === 'password' ? '👁' : '🙈';
+                });
+            });
+        </script>
 </section>
 </main>
 </section>
