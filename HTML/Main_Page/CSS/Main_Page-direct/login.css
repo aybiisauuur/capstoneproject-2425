@@ -1,0 +1,174 @@
+:root {
+    --primary-color: #004AAD;
+    --text-color: #000;
+    --nav-text-color: rgba(0, 0, 0, 0.4);
+    --border-color: #575757;
+    --header-bg: rgba(217, 217, 217, 0.4);
+    --card-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    --card-hover-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    background-color: rgba(217, 217, 217, 0.4);
+    border-top: 2px solid #575757;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.app-title {
+    color: #000;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Add spacing between child elements */
+    padding: 20px;
+    width: 100%; /* Full-width container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.intro-text {
+    align-items: center;
+    color:#004AAD;
+    font-size: 80px;
+    font-weight: 400;
+    margin-bottom: 35%;
+}
+.search-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align content at the top, will control positioning */
+    height: 100vh; /* Full viewport height */
+}
+
+.search-box {
+    max-width: 400px;
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000;
+    transition: border-color 0.3s;
+    position: absolute; /* Position it relative to the viewport */
+    top: 39%;/* Position it 30% from the top of the viewport */
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+    padding: 5px;
+}
+
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.password-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align content at the top, will control positioning */
+    height: 100vh; /* Full viewport height */
+}
+
+.password-box {
+    max-width: 400px;
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000;
+    transition: border-color 0.3s;
+    position: absolute; /* Position it relative to the viewport */
+    top: 45%; /* Position it 30% from the top of the viewport */
+}
+
+.password-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.5);
+    background: transparent;
+    padding: 5px;
+}
+
+.password-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.Sign_In-section {
+    display: flex;
+    flex-direction: column; /* Arrange categories in a column */
+    align-items: center; /* Center items horizontally */
+    max-width: 100%; /* Prevent overflowing horizontally */
+    padding: 20px; /* Add some padding */
+}
+
+.Sign_In-card {
+    display: flex;
+    justify-content: center; /* Center content vertically */
+    border-radius: 20px;
+    box-shadow: var(--card-shadow, 0 4px 6px rgba(0, 0, 0, 0.1)); /* Use a fallback */
+    padding: 20px;
+    width: 100%; /* Make the card responsive */
+    max-width: 320px; /* Set a maximum width to prevent overlap */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 370%;
+}
+
+.Sign_In-card:hover,
+.Sign_In-card:focus {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow, 0 6px 8px rgba(0, 0, 0, 0.15)); /* Use a fallback */
+    outline: none;
+}
+.Sign_In-title {
+    color: #fff; /* Use a fallback */
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    
+}
+.Sign_In-card.light {
+    background: #004AAD;
+}

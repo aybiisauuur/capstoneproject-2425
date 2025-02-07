@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SenyasHub - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Main_Page-css/home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header class="app-header">
+        <h1 class="app-title">SenyasHub</h1>
+    </header>
+    <div class="search-container">
+        <div class="search-box">
+            <input type="search" class="search-input" placeholder="What would you like to learn?"
+                aria-label="Search modules">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8a62d0954dce249c2f05faacbad007e4cf7c999f140777f38537ca568c60a08f?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+                alt="Search" class="search-icon nav-icon" width="34" height="34">
+        </div>
+    </div>
+
+    <div class="no-results" style="display: none; text-align: center; margin-top: 20px;">
+        No results found.
+    </div>
+
+    <main class="main-content" role="main">
+        <section class="info-panel" aria-label="App Information">
+            <p>This app will help you turn your eyes into ears. With this app, you will be able to learn the basics of
+                Filipino Sign Language (FSL).</p>
+            <br>
+            <p>The modules and sign language detector can only be accessed if you have an internet connection.</p>
+            <br>
+            <p>To learn more about this app, please click on the About Us tab located below.</p>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <nav class="footer-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index-home.html" class="nav-link active">
+                        <img src="home-filled.png" alt="" class="nav-icon">
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="modules-section.html" class="nav-link ">
+                        <img src="book-fill.png" alt="" class="nav-icon">
+                        <span>Modules</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Quizzes_home-home.html" class="nav-link active">
+                        <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F6475ea39bb12c7eced99b2fbe23787d6085ef01e5bbd30ad919e112ca8aecc4a?width=500&height=500" alt="" class="nav-icon">
+                        <span>Quizzes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="chat-section-client.html" class="nav-link">
+                        <img src="Vector (1).png" alt="" class="nav-icon">
+                        <span>Live Chat</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="about_us.html" class="nav-link">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                            alt="" class="nav-icon">
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+    <script>
+
+        $(document).ready(function () {
+            let allPhraseCards = '';
+            let recentModules = [];
+            const files = [
+                'greetings-subpage.html',
+                'common_phrases_comelec-subpage.html',
+                'questions-subpage.html'
+            ];
+
+            // Load content and initialize search
+            loadContent();
+
+            function loadContent() {
+                let loadedFiles = 0;
+                files.forEach(file => {
+                    $.get(file)
+                        .done(function (data) {
+                            // Store the loaded content
+                            allPhraseCards += data;
+                            loadedFiles++;
+                            if (loadedFiles === files.length) {
+                                // Initialize search once all content is loaded
+                                attachSearchFunctionality();
+                            }
+                        })
+                        .fail(function () {
+                            console.error(`Failed to load ${file}`);
+                        });
+                });
+            }
+
+            function attachSearchFunctionality() {
+                // Handle search icon click
+                $('.search-icon').on('click', function () {
+                    performSearch();
+                });
+
+                // Handle Enter key press
+                $('.search-input').on('keypress', function (e) {
+                    if (e.key === "Enter") {
+                        performSearch();
+                    }
+                });
+            }
+
+            function performSearch() {
+                const query = $('.search-input').val().toLowerCase().trim();
+
+                // Clear everything except search bar
+                $('.info-panel').hide();
+                $('.recent-section').hide();
+
+                if (query === '') {
+                    // If search is empty, restore original content
+                    $('.info-panel').show();
+                    $('.recent-section').show();
+                    $('.no-results').hide();
+                    return;
+                }
+
+                // Create a temporary div to parse the HTML content
+                const tempDiv = $('<div>').html(allPhraseCards);
+
+                // Find cards that match the search query
+                const filteredCards = tempDiv.find('.phrase-card').filter(function () {
+                    const cardTitle = $(this).find('.card-title').text().toLowerCase();
+                    const cardContent = $(this).text().toLowerCase();
+                    return cardTitle.includes(query) || cardContent.includes(query);
+                });
+
+                // Show results or "no results" message
+                if (filteredCards.length > 0) {
+                    $('.main-content').html(filteredCards);
+                    $('.no-results').hide();
+                } else {
+                    $('.main-content').empty();
+                    $('.no-results').show();
+                }
+            }
+
+            // Search box styling
+            $('.search-input')
+                .focus(function () {
+                    $('.search-box').css('border-color', '#004AB3');
+                })
+                .blur(function () {
+                    $('.search-box').css('border-color', '#000');
+                });
+                
+            // Recent modules handling remains the same
+            $(document).on('click', '.recent-item', function () {
+                const moduleName = $(this).find('span').text();
+                if (!recentModules.includes(moduleName)) {
+                    recentModules.unshift(moduleName);
+                    if (recentModules.length > 5) {
+                        recentModules.pop();
+                    }
+                    updateRecentsList();
+                }
+            });
+
+            function updateRecentsList() {
+                const recentHTML = `
+            <h2 class="recent-header">Recents</h2>
+            ${recentModules.map(module => `
+                <div class="recent-item" tabindex="0" role="button">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a2568b9bcbeee7c939b9432fd286536999385b724f06eefb85f65f0cbb2af57?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" 
+                         alt="" 
+                         class="nav-icon" 
+                         aria-hidden="true">
+                    <span>${module}</span>
+                </div>
+            `).join('')}
+        `;
+                $('.recent-section').html(recentHTML);
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

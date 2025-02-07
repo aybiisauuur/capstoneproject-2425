@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Chat Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/Main_Page-css/chat-section-client.css">
+  <script type="module" src="JS/Main_Page-directjs/chat-section-client.js"></script>
+</head>
+<body>
+  <section class="modules" role="main" aria-label="Live Chat Interface">
+    <header class="app-header">
+        <h1 class="app-title">Live Chat</h1>
+    </header>
+  <main class="main-content">
+    <!-- QR Code Section -->
+    <section class="qr-section" aria-label="QR Code Scanner">
+      <div class="qr-content">
+        <p class="qr-description">
+          The Live Chat allows for two-way communication between hearing and deaf individuals.
+          <br><br>
+          Please allow the deaf client to scan this code for the chat to appear on their end.
+        </p>
+        <img src="SCAN ME WORKING.png" alt="QR Code for chat access" class="qr-code">
+      </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-container" aria-label="Live Chat Section">
+      <header class="chat-header" role="heading" aria-level="1">
+        <h1>Responses</h1>
+      </header>
+
+      <div id="messagesContainer" class="messages-box" role="log" aria-live="polite"></div>
+
+      <form class="chat-content" aria-label="Chat Form">
+        <!-- <label for="questions" class="questions-label">Questions</label>
+        <button type="button" class="question-button" id="election" aria-pressed="false">Election when?</button>
+        <button type="button" class="question-button" id="registration" aria-pressed="false">Next registration when?</button>
+        <label for="answer" class="visually-hidden">Your Answer</label>
+        <textarea id="answer" class="answer-textarea" placeholder="Type your message here..." aria-label="Type your message here" rows="5"></textarea>
+        <button type="submit" class="submit-button" aria-label="Send your message">Send</button> -->
+        <button type="clear" class="clear-button" aria-label="Clear chat">Clear chat</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <nav class="footer-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index-home.html" class="nav-link">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1097b72758fcea49f017b52e2c6bc06aa36e37c911fdc33b3f1dbad957b3fc82?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="modules-section.html" class="nav-link">
+                    <img src="book-fill.png" alt="" class="nav-icon">
+                    <span>Modules</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="chat-section-client.html" class="nav-link active">
+                    <img src="chat.png" alt="" class="nav-icon">
+                    <span>Live Chat</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="about_us.html" class="nav-link">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+  </footer>
+</body>
+</html>

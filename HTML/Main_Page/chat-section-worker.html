@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Main_Page-css/chat-worker.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="JS/Main_Page-directjs/chat-section-worker.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"></script>
+</head>
+
+<body>
+    <section class="modules" role="main" aria-label="Live Chat Interface">
+        <header class="app-header">
+            <h1 class="app-title">Live Chat</h1>
+        </header>
+
+        <main class="chat-content">
+            <div class="chat-sections">
+                <section class="qr-section" aria-label="QR Code Scanner">
+                    <div class="qr-content">
+                        <p class="qr-description">
+                            The Live Chat allows for two-way communication between hearing and deaf individuals.
+                            <br><br>
+                            Please allow the deaf client to scan this code for the chat to appear on their end.
+                        </p>
+                        <img src="SCAN ME WORKING.png" alt="QR Code for chat access" class="qr-code">
+                    </div>
+                </section>
+
+                <section class="response-section" aria-label="Chat Response Area">
+                    <div class="response-content" id="messagesContainer">
+                        <h2 class="response-title">RESPONSES</h2>
+                        <div class="response-box" role="log" aria-live="polite" aria-label="Chat messages"></div>
+                        <button class="clear-btn" aria-label="Clear all responses">Clear Responses</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <nav class="footer-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index-home.html" class="nav-link">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1097b72758fcea49f017b52e2c6bc06aa36e37c911fdc33b3f1dbad957b3fc82?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="modules-section.html" class="nav-link">
+                            <img src="book-fill.png" alt="" class="nav-icon">
+                            <span>Modules</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="chat-section-worker.html" class="nav-link active">
+                            <img src="chat.png" alt="" class="nav-icon">
+                            <span>Live Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about_us.html" class="nav-link">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                            <span>About</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyCnlzgGB3lSAn8Xf6H-Bx_bJ9QPK6iWJ80",
+                authDomain: "senyashub.firebaseapp.com",
+                projectId: "senyashub",
+                storageBucket: "senyashub.appspot.com",
+                messagingSenderId: "272537634617",
+                appId: "1:272537634617:web:2763ed67c759373fd30ae8",
+                measurementId: "G-R6MYXS2Z0G"
+            };
+
+            // Initialize Firebase
+            const app = firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            // Listen for real-time updates from Firestore
+            db.collection("messages")
+                .orderBy("timestamp", "asc")
+                .onSnapshot((snapshot) => {
+                    const responseBox = $('.response-box');
+                    responseBox.empty(); // Clear previous messages
+
+                    snapshot.forEach((doc) => {
+                        const message = doc.data().message;
+                        const messageItem = $('<p>').text(message);
+                        responseBox.append(messageItem);
+                    });
+                }, (error) => {
+                    console.error("Error fetching messages: ", error);
+                });
+
+            // Clear responses on button click
+            $('.clear-btn').on('click', function () {
+                $('.response-box').empty();
+            });
+        });
+    </script>
+</body>
+
+</html>

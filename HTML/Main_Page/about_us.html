@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SenyasHub - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Main_Page-direct/about_us.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+
+<section class="about-container">
+  <header class="app-header">
+    <h1 class="app-title">About Us</h1>
+</header>
+
+  <main class="content-wrapper">
+    <div class="content-grid">
+      <article class="main-content">
+        <h1 class="section-title">About Filipino Sign Language (FSL)</h1>
+        <p class="description1">FSL is used by Filipino deaf or hard-of-hearing individuals. It is a visual language that combines gestures, facial expressions along with hand and body movements.</p>
+        <p class="description2">It is neither based on nor resembles Filipino and English, since Sign Language is a visual language that relies heavily on imagery and concepts.</p>
+
+        <div class="app-info">
+          <h2 class="section-title">About the Application</h2>
+          <p class="description3">This application translates from text to FSL and teaches basics of it. The glossary included in this app is useful for conversational FSL.</p>
+          <p class="description4">A full experience of this app can be availed through subscription. To avail, please contact senyales@gmail.com.</p>
+        </div>
+      </article>
+
+      <aside class="image-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/8e7e645c3c4d4bf18d44fb974ca4435c/49d50edfc6a92644ab587d61450aa2517557a8ccbd12b4236b0c8b9850ee00cd?apiKey=8e7e645c3c4d4bf18d44fb974ca4435c&" alt="FSL Demonstration Image 1" class="fsl-image" loading="lazy">
+        <img src="https://cdn.builder.io/api/v1/image/assets/8e7e645c3c4d4bf18d44fb974ca4435c/77fb777bc96643c41b13fc5df193aa4d7b086107c0cc0e720bb7332d8ff65a72?apiKey=8e7e645c3c4d4bf18d44fb974ca4435c&" alt="FSL Demonstration Image 2" class="fsl-image" loading="lazy">
+      </aside>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <nav class="footer-nav">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="index-home.html" class="nav-link">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1097b72758fcea49f017b52e2c6bc06aa36e37c911fdc33b3f1dbad957b3fc82?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="nav-icon">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="modules-section.html" class="nav-link ">
+                    <img src="book-fill.png" alt="" class="nav-icon">
+                    <span>Modules</span>
+                </a>
+            </li>
+            <li class="nav-item">
+              <a href="chat-section-client.html" class="nav-link">
+                  <img src="Vector (1).png" alt="" class="nav-icon">
+                  <span>Live Chat</span>
+              </a>
+          </li>
+            <li class="nav-item">
+                <a href="about_us.html" class="nav-link active">
+                    <img src="info-circle-filled.png" alt="" class="nav-icon">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</footer>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('.nav-item').on('click', function(e) {
+    e.preventDefault();
+    const href = $(this).attr('href');
+    window.location.href = href;
+  });
+});

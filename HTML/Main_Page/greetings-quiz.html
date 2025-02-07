@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="CSS/Main_Page-direct/quizzes-greetings.css">
+</head>
+<body>
+  <section class="quiz" role="main">
+    <header class="app-header">
+      <h1 class="app-title">Quizzes - greetings</h1>
+    </header>
+    <main class="content-wrapper">
+      <article class="intro-section">
+        
+        <!-- Video Container -->
+        <div class="video-container">
+          <video id="quiz-video" controls>
+            <source src="https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F4340ac0bcd724d3789eba297002d8c62%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=4340ac0bcd724d3789eba297002d8c62&alt=media&optimized=true" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button id="replay-button" class="hidden">Replay Video</button>
+        </div>
+        <h2 class="intro-text">Choose the correct answer</h2>
+      </article>
+      <section class="Options-section" aria-label="FSL Categories">
+        <div class="Options-container">
+          <div class="Option_A" data-correct="true">
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500" alt="A">
+            <div class="overlay"></div> <!-- Overlay div -->
+          </div>
+          <div class="Option_B" data-correct="false">
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500" alt="B">
+            <div class="overlay"></div> <!-- Overlay div -->
+          </div>
+          <div class="Option_C" data-correct="false">
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500" alt="C">
+            <div class="overlay"></div> <!-- Overlay div -->
+          </div>
+          <div class="Option_D" data-correct="false">
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500" alt="D">
+            <div class="overlay"></div> <!-- Overlay div -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+  <script src="JS/Main_Page-directjs/quizzes-greetings.js"></script>
+</body>
+</html>

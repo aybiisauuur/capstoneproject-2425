@@ -1,0 +1,42 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.Quiz {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.app-header {
+    background-color: rgba(217, 217, 217, 0.4);
+    border-top: 2px solid #575757;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.app-title {
+    color: #000;
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Add spacing between child elements */
+    padding: 20px;
+    width: 100%; /* Full-width container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
