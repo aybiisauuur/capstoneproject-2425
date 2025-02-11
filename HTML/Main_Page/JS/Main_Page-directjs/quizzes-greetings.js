@@ -1,67 +1,69 @@
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
   const video = document.getElementById("quiz-video");
   const replayButton = document.getElementById("replay-button");
   const optionsContainer = document.querySelector(".Options-container");
 
-  const questions = [
+  // Your original questions array (unchanged)
+  const allQuestions = [
     {
-      video: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F4340ac0bcd724d3789eba297002d8c62%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=4340ac0bcd724d3789eba297002d8c62&alt=media&optimized=true",
+      video:
+        "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F147d233312414ae0af5bc611afff6a7f%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=147d233312414ae0af5bc611afff6a7f&alt=media&optimized=true",
       options: [
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500", correct: true },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: false },
-      ],
-    },
-    
-  { video: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fc8d86755e9de4dd185b01c30b5c37a13%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=c8d86755e9de4dd185b01c30b5c37a13&alt=media&optimized=true",
-      options: [
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500", correct: true },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: false },
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500",correct: true,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500",correct: false,},
       ],
     },
     {
-      video: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2817c83a214a490d885383ab2f08a420%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=2817c83a214a490d885383ab2f08a420&alt=media&optimized=true",
+      video:"https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F46c37e2c4bde44ba86500c8796b5056e%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=46c37e2c4bde44ba86500c8796b5056e&alt=media&optimized=true",
       options: [
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500", correct: true },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: false },
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500",correct: true,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500",correct: false,},
       ],
     },
     {
-      video: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F7e9672f32e0248e0b8ae2acb7cfe6937%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=7e9672f32e0248e0b8ae2acb7cfe6937&alt=media&optimized=true",
+      video:"https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F8621f49161fa4b3d8a8d2ab6bbd40b3c%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=8621f49161fa4b3d8a8d2ab6bbd40b3c&alt=media&optimized=true",
       options: [
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: true },
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500",correct: true,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500",correct: false,},
       ],
     },
     {
-      video: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0a60ccfbc57c419c83dcababad12ac73%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=0a60ccfbc57c419c83dcababad12ac73&alt=media&optimized=true",
+      video:"https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0cf34707c4454da796e39e565d5646d9%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=0cf34707c4454da796e39e565d5646d9&alt=media&optimized=true",
       options: [
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fee9623bd1fb34f299937e7b766cde70c", correct: true },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0cc9dbe371fa42ecad85a18dd44eb4f4", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F05c5cfe459a44a959a2acddb680f491d", correct: false },
-        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: false},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0d73af9428ac43c7bfb9ca2c8b171289?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fa9e47e57594d409ab2e1526bb7a06b42?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F2d20b613f7e34e7b96e36cbbb580886a?width=500&height=500",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500",correct: true,},
+      ],
+    },
+    {
+      video:"https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Feb03e6dbcc504b38976a204dd51eec28%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=eb03e6dbcc504b38976a204dd51eec28&alt=media&optimized=true",
+      options: [
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fee9623bd1fb34f299937e7b766cde70c",correct: true,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0cc9dbe371fa42ecad85a18dd44eb4f4",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F05c5cfe459a44a959a2acddb680f491d",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500",correct: false,},
       ],
     },
   ];
 
-  
+
+  let currentQuestions = allQuestions.slice();
   let currentQuestionIndex = 0;
+  let retryQuestions = [];
 
   function loadQuestion(questionIndex) {
-    const question = questions[questionIndex];
-
-    // Update the video source
+    console.log("Loading question index:", questionIndex);
+    const question = currentQuestions[questionIndex];
     video.src = question.video;
     video.load();
-
-    // Clear previous options and re-add new ones
     optionsContainer.innerHTML = "";
 
     question.options.forEach((optionData, index) => {
@@ -72,13 +74,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = document.createElement("img");
       img.src = optionData.image;
       img.alt = `Option ${String.fromCharCode(65 + index)}`;
+
       const overlay = document.createElement("div");
       overlay.classList.add("overlay");
 
       optionDiv.appendChild(img);
       optionDiv.appendChild(overlay);
-
       optionDiv.addEventListener("click", function () {
+        console.log("Option clicked:", img.src);
         handleAnswer(optionDiv);
       });
 
@@ -88,42 +91,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleAnswer(option) {
     const isCorrect = option.getAttribute("data-correct") === "true";
+    console.log("Answer selected, correct:", isCorrect);
 
-    if (isCorrect) {
-      option.classList.add("correct");
-
-      // Remove the overlay after 1.5 seconds
-      setTimeout(() => {
-        option.classList.remove("correct");
-      }, 1500);
-
-      // Load the next question after 3 seconds
-      setTimeout(() => {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-          loadQuestion(currentQuestionIndex);
-        } else {
-          alert("Quiz completed!");
-        }
-      }, 1500);
-    } else {
-      option.classList.add("incorrect");
-
-      // Remove the overlay after 1.5 seconds
-      setTimeout(() => {
-        option.classList.remove("incorrect");
-      }, 1500);
+    if (!isCorrect && !retryQuestions.includes(currentQuestions[currentQuestionIndex])) {
+      retryQuestions.push(currentQuestions[currentQuestionIndex]);
     }
+
+    option.classList.add(isCorrect ? "correct" : "incorrect");
+
+    setTimeout(() => {
+      option.classList.remove(isCorrect ? "correct" : "incorrect");
+      currentQuestionIndex++;
+
+      if (currentQuestionIndex < currentQuestions.length) {
+        loadQuestion(currentQuestionIndex);
+      } else if (retryQuestions.length > 0) {
+        console.log("Retrying incorrect questions:", retryQuestions);
+        alert("Ate ulit natin yeah, may mali kasi eh~");
+        currentQuestions = retryQuestions.slice();
+        retryQuestions = [];
+        currentQuestionIndex = 0;
+        loadQuestion(currentQuestionIndex);
+      } else {
+        // No questions left to answer.
+        console.log("Quiz completed!");
+        alert("Quiz completed!");
+      }
+    }, 1000);
   }
 
+  // Load the first question.
   loadQuestion(currentQuestionIndex);
 
   video.addEventListener("ended", function () {
+    console.log("Video ended");
     replayButton.classList.remove("hidden");
     replayButton.classList.add("visible");
   });
 
   replayButton.addEventListener("click", function () {
+    console.log("Replay button clicked");
     video.currentTime = 0;
     video.play();
     replayButton.classList.remove("visible");
