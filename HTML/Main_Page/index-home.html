@@ -7,6 +7,7 @@
     <title>SenyasHub - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/Main_Page-direct/home.css">
+    <link rel="stylesheet" href="CSS/Main_Page-direct/home.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -54,7 +55,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="Quizzes_home-home.html" class="nav-link active">
+                    <a href="Quizzes_home.html" class="nav-link">
                         <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F6475ea39bb12c7eced99b2fbe23787d6085ef01e5bbd30ad919e112ca8aecc4a?width=500&height=500" alt="" class="nav-icon">
                         <span>Quizzes</span>
                     </a>
@@ -183,10 +184,7 @@
             <h2 class="recent-header">Recents</h2>
             ${recentModules.map(module => `
                 <div class="recent-item" tabindex="0" role="button">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a2568b9bcbeee7c939b9432fd286536999385b724f06eefb85f65f0cbb2af57?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" 
-                         alt="" 
-                         class="nav-icon" 
-                         aria-hidden="true">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4a2568b9bcbeee7c939b9432fd286536999385b724f06eefb85f65f0cbb2af57?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="nav-icon" aria-hidden="true">
                     <span>${module}</span>
                 </div>
             `).join('')}
