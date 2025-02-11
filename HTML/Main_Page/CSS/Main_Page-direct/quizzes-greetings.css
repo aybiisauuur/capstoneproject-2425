@@ -17,6 +17,47 @@ body {
     height: 100vh;
 }
 
+.top-header {
+  background-color: rgba(217, 217, 217, 0.4);
+  border-top: 2px solid #575757;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 1.188rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: opacity 0.2s;
+}
+
+.back-link:hover,
+.back-link:focus {
+  opacity: 0.8;
+}
+
+.back-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.back-text {
+  font-size: 20px;
+}
+
+.page-title {
+  font-size: 15px;
+  color: #000;
+  font-weight: 400;
+  margin: 0;
+}
+
 .app-header {
     background-color: rgba(217, 217, 217, 0.4);
     border-top: 2px solid #575757;
@@ -154,4 +195,49 @@ body {
 .incorrect .overlay {
   background-color: rgba(255, 0, 0, 0.5);
   opacity: 1; /* Start fully visible */
+}
+
+.app-footer {
+  background-color: #EEEEEE;
+  border-top: 2px solid #575757;
+  padding: 10px 0;
+  position: fixed; /* Keep it fixed at the bottom */
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-nav {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  text-align: center;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+}
+
+.nav-link.active {
+  color: #004AAD;
+}
+
+.nav-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
 }

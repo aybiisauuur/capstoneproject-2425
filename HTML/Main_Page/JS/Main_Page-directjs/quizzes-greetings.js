@@ -40,6 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
         { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: true },
       ],
     },
+    {
+      video: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0a60ccfbc57c419c83dcababad12ac73%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=0a60ccfbc57c419c83dcababad12ac73&alt=media&optimized=true",
+      options: [
+        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fee9623bd1fb34f299937e7b766cde70c", correct: true },
+        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0cc9dbe371fa42ecad85a18dd44eb4f4", correct: false },
+        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F05c5cfe459a44a959a2acddb680f491d", correct: false },
+        { image: "https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500", correct: false},
+      ],
+    },
   ];
 
   
@@ -63,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = document.createElement("img");
       img.src = optionData.image;
       img.alt = `Option ${String.fromCharCode(65 + index)}`;
-
       const overlay = document.createElement("div");
       overlay.classList.add("overlay");
 

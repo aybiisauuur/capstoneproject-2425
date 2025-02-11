@@ -50,14 +50,27 @@ body {
 }
 
 .categories-section {
-    display: flex;
-    flex-direction: column; /* Arrange categories in a column */
-    align-items: center; /* Center items horizontally */
-    gap: 20px; /* Add spacing between items */
-    max-width: 100%; /* Prevent overflowing horizontally */
-    padding: 20px; /* Add some padding */
-    box-sizing: border-box; /* Include padding in width calculation */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the grid on the page */
 }
+
+.category-card:nth-child(1),
+.category-card:nth-child(2),
+.category-card:nth-child(3) {
+    grid-column: 1; /* Place first three cards in the left column */
+}
+
+.category-card:nth-child(4) {
+    grid-column: 2; /* Place the last card in the right column */
+    grid-row: 1; /* Align it with the first card */
+}
+
 
 .category-card {
     display: flex;
