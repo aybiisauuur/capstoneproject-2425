@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="CSS/Main_Page-direct/login.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script type = "module" src="JS/Main_Page-directjs/login.js" defer></script>
+    <script type="module" src="JS/Main_Page-directjs/login.js"></script>
 </head>
+
 <body>
     <section class="login" role="main">
         <header class="app-header">
@@ -25,7 +28,7 @@
         <div class="search-container">
             <div class="input-wrapper">
                 <img src="CSS/pngegg (28) 1.png" alt="User Icon" class="icon">
-                <input type="search" class="search-input" placeholder="User Email" aria-label="userID">
+                <input type="search" class="search-input" placeholder="User Email" aria-label="userID" id="email">
             </div>
         </div>
 
@@ -33,36 +36,26 @@
         <div class="password-container">
             <div class="input-wrapper">
                 <img src="CSS/pngegg (29) 1.png" alt="Password Icon" class="icon">
-                <input type="password" class="password-input" placeholder="Password" aria-label="password">
+                <input type="password" class="password-input" placeholder="Password" aria-label="password"
+                    id="password">
                 <button type="button" class="toggle-password">&#128065;</button>
             </div>
         </div>
         </div>
-            <main class="content-wrapper">
-                <section class="Sign_In-section" aria-label="FSL Categories">
-                    <button class="Sign_In-card light">
-                        <h3 class="Sign_In-title">Sign up</h3>
-                    </button>
-                    <div class="link-container">
-                        <a href="#" class="forgot-password">Forgot Password?</a>
-                        <a href="register.html" class="new-user">New user? Register here</a>
-                    </div>
-                </section>
-            </main>
-        </section>
-    
-        <script>
-            // Toggle password visibility
-            document.querySelectorAll('.toggle-password').forEach(button => {
-                button.addEventListener('click', function () {
-                    const input = this.previousElementSibling;
-                    input.type = input.type === 'password' ? 'text' : 'password';
-                    this.textContent = input.type === 'password' ? '👁' : '🙈';
-                });
-            });
-        </script>
-</section>
-</main>
-</section>
+        <main class="content-wrapper">
+            <section class="Sign_In-section" aria-label="FSL Categories">
+                <button class="Sign_In-card light" id ="signup">
+                    <h3 class="Sign_In-title">Sign up</h3>
+                </button>
+                <div class="link-container">
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="register.html" class="new-user">New user? Register here</a>
+                </div>
+            </section>
+        </main>
+    </section>
+    </section>
+    </main>
+    </section>
 </body>
 </html>
