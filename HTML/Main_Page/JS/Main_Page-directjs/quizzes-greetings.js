@@ -52,6 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
         {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F07a43505fdaf4ea18f3ff501d7c109c0?width=500&height=500",correct: false,},
       ],
     },
+    {
+      video:"https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fb524fba2c7f041fa9c6cbe92f5a78555%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=b524fba2c7f041fa9c6cbe92f5a78555&alt=media&optimized=true",
+      options: [
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F03895f6b3e8f40edb3a7f85b4f742329",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F0cc9dbe371fa42ecad85a18dd44eb4f4",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F05c5cfe459a44a959a2acddb680f491d",correct: false,},
+        {image:"https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fcaeeff5c062242c2b98ec1c01db4dd6e",correct: true,},
+      ],
+    },
   ];
 
 
