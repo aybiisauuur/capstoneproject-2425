@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const replayButton = document.getElementById("replay-button");
   const optionsContainer = document.querySelector(".Options-container");
 
-  // Your original questions array (unchanged)
   const allQuestions = [
     {
       video:
@@ -64,9 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
 
-  let currentQuestions = allQuestions.slice();
-  let currentQuestionIndex = 0;
-  let retryQuestions = [];
+
+  let correctAnswers = 0;
+  let secondAttempts = 0;
+  let wrongAnswers = 0;
+
 
   function loadQuestion(questionIndex) {
     console.log("Loading question index:", questionIndex);
