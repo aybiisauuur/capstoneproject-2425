@@ -106,46 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     },
   ];
-
-  let currentQuestions = allQuestions.slice();
+  
   let currentQuestionIndex = 0;
+  let currentQuestions = allQuestions.slice();
   let retryQuestions = [];
-  let totalQuestions = allQuestions.length;
-  let baseProgress = 0;
-  let retryProgress = 0;
-  let correctAttempts = 0;
-  let incorrectAttempts = 0;
-  const maxPossibleAttempts = 20; // 10 questions × 2 attempts max
-
-  const progressBase = document.createElement('div');
-  const progressRetry = document.createElement('div');
-  document.querySelector('.progress-container').append(progressBase, progressRetry);
-  const progressBar = document.querySelector('.progress-bar');
-  const progressCorrect = document.querySelector('.progress-correct');
-  const progressIncorrect = document.querySelector('.progress-incorrect');
-  function updateProgress(isCorrect) {
-    if (isCorrect) {
-        correctAttempts++;
-    } else {
-        incorrectAttempts++;
-    }
-
-    const totalAttempts = correctAttempts + incorrectAttempts;
-    const progressPercentage = (totalAttempts / maxPossibleAttempts) * 100;
-    
-    progressBar.style.width = `${progressPercentage}%`;
-    
-    if (totalAttempts > 0) {
-        const correctWidth = (correctAttempts / totalAttempts) * 100;
-        const incorrectWidth = (incorrectAttempts / totalAttempts) * 100;
-        
-        progressCorrect.style.width = `${correctWidth}%`;
-        progressIncorrect.style.width = `${incorrectWidth}%`;
-    }
-}
-  // Initialize progress bars
-progressBase.className = 'progress-base';
-progressRetry.className = 'progress-retry';
 
   function loadQuestion(questionIndex) {
     console.log("Loading question index:", questionIndex);
@@ -180,43 +144,36 @@ progressRetry.className = 'progress-retry';
 
   function handleAnswer(option) {
     const isCorrect = option.getAttribute("data-correct") === "true";
-    const question = currentQuestions[currentQuestionIndex];
+    console.log("Answer selected, correct:", isCorrect);
 
-    if (!isCorrect && !retryQuestions.includes(question)) {
-        retryQuestions.push(question);
+    if (!isCorrect && !retryQuestions.includes(currentQuestions[currentQuestionIndex])) {
+      retryQuestions.push(currentQuestions[currentQuestionIndex]);
     }
 
-    // Update progress bar
-    updateProgress(isCorrect);
-
-    // Visual feedback
     option.classList.add(isCorrect ? "correct" : "incorrect");
-    document.getElementById('next-button').style.display = 'block';
-}
 
+    setTimeout(() => {
+      option.classList.remove(isCorrect ? "correct" : "incorrect");
+      currentQuestionIndex++;
 
-
-
-document.getElementById('next-button').addEventListener('click', () => {
-  currentQuestionIndex++;
-  
-  if (currentQuestionIndex >= currentQuestions.length) {
-      if (retryQuestions.length > 0) {
-          currentQuestions = retryQuestions;
-          retryQuestions = [];
-          currentQuestionIndex = 0;
-          alert("Let's try the incorrect questions again!");
+      if (currentQuestionIndex < currentQuestions.length) {
+        loadQuestion(currentQuestionIndex);
+      } else if (retryQuestions.length > 0) {
+        console.log("Retrying incorrect questions:", retryQuestions);
+        alert("Ate ulit natin yeah, may mali kasi eh~");
+        currentQuestions = retryQuestions.slice();
+        retryQuestions = [];
+        currentQuestionIndex = 0;
+        loadQuestion(currentQuestionIndex);
       } else {
-          alert("Quiz completed!");
-          return;
+        // No questions left to answer.
+        console.log("Quiz completed!");
+        alert("Quiz completed!");
       }
+    }, 1000);
   }
-  
-  loadQuestion(currentQuestionIndex);
-  document.getElementById('next-button').style.display = 'none';
-});
 
-
+  // Load the first question.
   loadQuestion(currentQuestionIndex);
 
   video.addEventListener("ended", function () {
