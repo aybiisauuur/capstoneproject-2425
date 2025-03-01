@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
         progressIncorrect.style.width = `${incorrectWidth}%`;
     }
 }
-  // Initialize progress bars
+
 progressBase.className = 'progress-base';
 progressRetry.className = 'progress-retry';
 
@@ -186,10 +186,10 @@ progressRetry.className = 'progress-retry';
         retryQuestions.push(question);
     }
 
-    // Update progress bar
+  
     updateProgress(isCorrect);
 
-    // Visual feedback
+
     option.classList.add(isCorrect ? "correct" : "incorrect");
     document.getElementById('next-button').style.display = 'block';
 }
