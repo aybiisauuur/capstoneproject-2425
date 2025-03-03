@@ -1,12 +1,14 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     background: #fff;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .Quiz {
@@ -44,9 +46,9 @@ body {
 .intro-text {
     text-align: center; /* Center the text */
     color: var(--text-color, #000); /* Use a fallback for the variable */
-    font-size: 45px;
+    font-size: 30px;
     font-weight: 400;
-    margin-top: -9%;
+    margin-top: 5px;
 }
 
 .categories-section {
