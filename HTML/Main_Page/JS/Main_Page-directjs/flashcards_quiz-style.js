@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const flashcard = document.querySelector('.flashcard');
     const video = document.querySelector('.card-video');
-    const nextButton = document.getElementById('nextButton');
+    const nextButton = document.getElementById('next-button');
     
     // Flashcards data - add your questions here
     const flashcards = [

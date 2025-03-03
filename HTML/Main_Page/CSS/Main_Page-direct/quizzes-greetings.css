@@ -1,14 +1,16 @@
 /* styles.css */
+
 body {
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     background: #fff;
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   
   .quiz {
@@ -250,6 +252,7 @@ body {
   border-radius: 15px;
   margin: 20px auto;
   overflow: hidden;
+  position: relative;
 }
 
 .progress-bar {
@@ -280,15 +283,14 @@ body {
 .incorrect .overlay {
     background: rgba(244, 67, 54, 0.5) !important;
 }
+
 #next-button {
   margin-top: 20px;
   padding: 10px 30px;
-  background-color: #76c7c0;
-  color: white;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
   display: none; /* Initially hidden */
+  position: relative;
+  left: -290px;
 }
 
 #next-button:disabled {
