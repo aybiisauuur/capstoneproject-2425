@@ -1,588 +1,887 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letters and Numbers</title>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/Main_Page-direct/greetings-section.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letters and Numbers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/Main_Page-direct/greetings-section.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
-    <div class="modules-container">
-        <header class="top-header" role="banner">
-            <a href="modules-section.html" class="back-link" aria-label="Back to previous page">
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="back-icon" aria-hidden="true">
-                <span class="back-text">Modules</span>
+  <div class="modules-container">
+    <header class="top-header" role="banner">
+      <a href="modules-section.html" class="back-link" aria-label="Back to previous page">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+          alt="" class="back-icon" aria-hidden="true">
+        <span class="back-text">Modules</span>
+      </a>
+      <h1 class="page-title">Letters and Numbers</h1>
+    </header>
+
+    <main class="phrases-container">
+      <nav class="category-nav" aria-label="Phrase categories">
+        <ul class="category-list" role="tablist">
+          <li class="category-item" role="presentation">
+            <button class="category-btn active" role="tab" aria-selected="true" aria-controls="all-phrases">All</button>
+          </li>
+          <li class="category-item" role="presentation">
+            <button class="category-btn" role="tab" aria-selected="false" aria-controls="letters">Letters</button>
+          </li>
+          <li class="category-item" role="presentation">
+            <button class="category-btn" role="tab" aria-selected="false" aria-controls="numbers">Numbers</button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cards-grid">
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/A.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">A</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/B.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">B</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/C.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">C</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/D.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">D</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/E.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">E</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/F.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">F</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/G.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">G</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/H.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">H</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/I.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">I</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/J.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">J</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/K.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">K</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/L.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">L</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/M.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">M</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/N.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">N</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/O.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">O</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/P.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">P</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/Q.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Q</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/R.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">R</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/S.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">S</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/T.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">T</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/U.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">U</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/V.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">V</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/W.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">W</h2>
+        </article>
+
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/X.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">X</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/Y.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Y</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/Z.mp4"
+          data-category="letters">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">Z</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/1.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">1</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/2.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">2</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/3.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">3</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/4.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">4</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/5.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">5</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/6.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">6</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/7.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">7</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/8.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">8</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/9.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">9</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/10.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">10</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/11.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">11</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/12.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">12</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/13.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">13</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/14.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">14</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/15.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">15</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/16.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">16</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/17.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">17</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/18.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">18</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/19.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">19</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/20.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">20</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/30.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">30</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/40.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">40</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/50.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">50</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/60.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">60</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/70.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">70</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/80.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">80</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/90.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">90</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/100.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">100</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/1000.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">1 000</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/10000.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">10 000</h2>
+        </article>
+
+        <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/1mil.mp4"
+          data-category="numbers">
+          <div class="card-image-wrapper">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              alt="" class="card-bg">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"
+              class="card-icon">
+          </div>
+          <h2 class="card-title">1 000 000</h2>
+        </article>
+      </div>
+
+      <div class="video-modal" role="dialog" aria-modal="true">
+        <div class="modal-content">
+          <button class="close-modal" aria-label="Close video">×</button>
+          <video controls width="100%">
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <nav class="footer-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index-home.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fe3e31994e30d4f5695217c5293d48df7"
+                alt="" class="nav-icon">
+              <span>Home</span>
             </a>
-            <h1 class="page-title">Letters and Numbers</h1>
-        </header>
+          </li>
+          <li class="nav-item">
+            <a href="modules-section.html" class="nav-link active">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F7596fba823874c9a9c65193a80be0573"
+                alt="" class="nav-icon">
+              <span>Modules</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="Quizzes_home-home.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F6475ea39bb12c7eced99b2fbe23787d6085ef01e5bbd30ad919e112ca8aecc4a?width=500&height=500"
+                alt="" class="nav-icon">
+              <span>Quizzes</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="chat-section-client.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F4e04bcb29e9d4506ae95258fef3484cd"
+                alt="" class="nav-icon">
+              <span>Live Chat</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="about_us.html" class="nav-link">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="nav-icon">
+              <span>About</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
 
-        <main class="phrases-container">
-            <nav class="category-nav" aria-label="Phrase categories">
-              <ul class="category-list" role="tablist">
-                <li class="category-item" role="presentation">
-                  <button class="category-btn active" role="tab" aria-selected="true" aria-controls="all-phrases">All</button>
-                </li>
-                <li class="category-item" role="presentation">
-                  <button class="category-btn" role="tab" aria-selected="false" aria-controls="letters">Letters</button>
-                </li>
-                <li class="category-item" role="presentation">
-                  <button class="category-btn" role="tab" aria-selected="false" aria-controls="numbers">Numbers</button>
-                </li>
-              </ul>
-            </nav>
-          
-            <div class="cards-grid">
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/A.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">A</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/B.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">B</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/C.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/458c82d28a5a1879b34817eca95b57351b29655f9a468935c2fb53c81be7e380?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">C</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/D.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1fb2ca14278299baa25953f58db44a023338893e1217f94601c56f91519db484?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">D</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/E.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">E</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/F.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">F</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/G.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">G</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/H.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">H</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/I.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">I</h2>
-              </article>
-          
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/J.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">J</h2>
-              </article>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Category button click
+        $('.category-btn').click(function () {
+          // Toggle active state for category buttons
+          $('.category-btn').removeClass('active').attr('aria-selected', 'false');
+          $(this).addClass('active').attr('aria-selected', 'true');
 
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/K.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">K</h2>
-              </article>
+          const category = $(this).text().toLowerCase();
+          if (category === 'all') {
+            // Show all cards if "All" is selected
+            $('.phrase-card').show();
+          } else {
+            // Hide all cards and show only the selected category
+            $('.phrase-card').hide();
+            $(`.phrase-card[data-category="${category}"]`).show();
+          }
+        });
 
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/L.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">L</h2>
-              </article>
+        // Handle video modal
+        $('.phrase-card').click(function () {
+          const videoUrl = $(this).data('video-url');
+          const modal = $('.video-modal');
+          const video = modal.find('video');
 
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/M.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">M</h2>
-              </article>
+          video.attr('src', videoUrl);
+          modal.addClass('active');
+          video[0].play();
+        });
 
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/N.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">N</h2>
-              </article>
+        // Close video modal
+        $('.close-modal').click(function () {
+          const modal = $('.video-modal');
+          const video = modal.find('video');
 
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/O.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">O</h2>
-              </article>
+          modal.removeClass('active');
+          video[0].pause();
+          video[0].currentTime = 0;
+        });
+      });
 
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/P.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">P</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/Q.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Q</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/R.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">R</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/S.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">S</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/T.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">T</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/U.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">U</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/V.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">V</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/W.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">W</h2>
-              </article>
-
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/X.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">X</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/Y.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Y</h2>
-              </article>
-
-            <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/letters/Z.mp4" data-category="letters">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">Z</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/1.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">1</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/2.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">2</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/3.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">3</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/4.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">4</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/5.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">5</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/6.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">6</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/7.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">7</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/8.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">8</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/9.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">9</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/10.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">10</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/11.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">11</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/12.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">12</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/13.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">13</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/14.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">14</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/15.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">15</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/16.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">16</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/17.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">17</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/18.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">18</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/19.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">19</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/20.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">20</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/30.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">30</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/40.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">40</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/50.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">50</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/60.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">60</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/70.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">70</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/80.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">80</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/90.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">90</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/100.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">100</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/1000.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">1 000</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/10000.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">10 000</h2>
-              </article>
-
-              <article class="phrase-card" tabindex="0" data-video-url="fsl_dataset/letters-numbers/num/1mil.mp4" data-category="numbers">
-                <div class="card-image-wrapper">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/66fb5db673f96ee6dbb3ac88e08babe3313d64c82375b4eb2c1302871813dff6?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768" alt="" class="card-bg">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bff65d2488da4d09de8445b02bd06788557df70470a0638b0d8c06c16e3b88f7?placeholderIfAbsent=true&apiKey=ee1a9a673f2d4dc29299c2e9209fb768"  class="card-icon">
-                </div>
-                <h2 class="card-title">1 000 000</h2>
-              </article>
-            </div>
-          
-            <div class="video-modal" role="dialog" aria-modal="true">
-              <div class="modal-content">
-                <button class="close-modal" aria-label="Close video">×</button>
-                <video controls width="100%">
-                  <source src="" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-          </main>
-          
-          <footer class="app-footer">
-            <nav class="footer-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="index-home.html" class="nav-link active">
-                            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fe3e31994e30d4f5695217c5293d48df7" alt="" class="nav-icon">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="modules-section.html" class="nav-link ">
-                            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F7596fba823874c9a9c65193a80be0573" alt="" class="nav-icon">
-                            <span>Modules</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="Quizzes_home-home.html" class="nav-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F6475ea39bb12c7eced99b2fbe23787d6085ef01e5bbd30ad919e112ca8aecc4a?width=500&height=500" alt="" class="nav-icon">
-                            <span>Quizzes</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="chat-section-client.html" class="nav-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2F4e04bcb29e9d4506ae95258fef3484cd" alt="" class="nav-icon">
-                            <span>Live Chat</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="about_us.html" class="nav-link">
-                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b0e39c6235471f6bacd5a7c31bb4125c137085020dfcd952de14956d07d02011?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
-                                alt="" class="nav-icon">
-                            <span>About</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
-          
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                // Category button click
-                $('.category-btn').click(function() {
-                    // Toggle active state for category buttons
-                    $('.category-btn').removeClass('active').attr('aria-selected', 'false');
-                    $(this).addClass('active').attr('aria-selected', 'true');
-                    
-                    const category = $(this).text().toLowerCase();
-                    if(category === 'all') {
-                        // Show all cards if "All" is selected
-                        $('.phrase-card').show();
-                    } else {
-                        // Hide all cards and show only the selected category
-                        $('.phrase-card').hide();
-                        $(`.phrase-card[data-category="${category}"]`).show();
-                    }
-                });
-
-                // Handle video modal
-                $('.phrase-card').click(function() {
-                    const videoUrl = $(this).data('video-url');
-                    const modal = $('.video-modal');
-                    const video = modal.find('video');
-                    
-                    video.attr('src', videoUrl);
-                    modal.addClass('active');
-                    video[0].play();
-                });
-
-                // Close video modal
-                $('.close-modal').click(function() {
-                    const modal = $('.video-modal');
-                    const video = modal.find('video');
-                    
-                    modal.removeClass('active');
-                    video[0].pause();
-                    video[0].currentTime = 0;
-                });
-            });
-            
-        </script>
+    </script>
 </body>
+
 </html>
