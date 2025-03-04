@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const flashcard = document.querySelector('.flashcard');
     const video = document.querySelector('.card-video');
     const nextButton = document.getElementById('next-button');
+    const prevButton = document.getElementById('previous-button');
+    const shuffleButton = document.getElementById('shuffle-button');
     
     // Flashcards data - add your questions here
     const flashcards = [
@@ -119,8 +121,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // next button
     nextButton.addEventListener('click', () => {
         currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+        updateFlashcard();
+    });
+
+    // previous button
+    prevButton.addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+        updateFlashcard();
+    });
+
+    //shuffle button
+    shuffleButton.addEventListener('click', () => {
+        // Shuffle the flashcards array using Fisher-Yates algorithm
+        for (let i = flashcards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+        }
+    
+        // Reset index to 0 after shuffling
+        currentCardIndex = 0;
         updateFlashcard();
     });
 
