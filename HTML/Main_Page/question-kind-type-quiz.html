@@ -7,38 +7,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/Main_Page-direct/quizzes_home.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="CSS/Main_Page-direct/type_styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="JS/Main_Page-directjs/quiz_type.js"></script>
 </head>
 <body>
-    <section class="Quiz" role="main">
-        <header class="app-header">
-            <h1 class="app-title">Quizzes</h1>
+    <section class="Type_of_quiz" role="main">
+        <header class="top-header" role="banner">
+            <a href="Quizzes_home-home.html" class="back-link" aria-label="Back to previous page">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="" class="back-icon" aria-hidden="true">
+                <span class="back-text">Quiz - Home</span>
+            </a>
+            <h1 class="page-title">Questions - Types of Quiz</h1>
         </header>
-        <main class="content-wrapper">
-            <article class="intro-section">
-                <h2 class="intro-text">
-                    Choose a category to start the quiz.
-                </h2>
-            </article>
-            <section class="categories-section" aria-label="FSL Categories">
-                <a href="kind-of-type_quiz.html" class="category-card light" tabindex="0" aria-label="Go to FSL Greetings section">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c5d0405eb18ce3cbe3be23cf1edfaa4a953aba6eb9ad113a05ba62098b3dd8d7?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing FSL greetings category" class="category-icon">
-                    <h3 class="category-title">Greetings</h3>
+    <main class="content-wrapper">
+        <article class="intro-section">
+            <h2 class="intro-text">
+                Choose a type to start the quiz.
+            </h2>
+        </article>
+        <section class="categories-section" aria-label="FSL Categories">
+                <a href="#" class="category-card light" tabindex="0" aria-label="Go to FSL Greetings section">
+                    <h3 class="category-title">Multiple Choice</h3>
                 </a>
-                <a href="common_phrases_comelec-subpage_quiz.html" class="category-card medium" tabindex="0" aria-label="Go to Common Phrases (COMELEC) section">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9113f49e6221c95ecbd076f7cbcdec4cbfd15dd10e9c25ffa336ce047d0192b1?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing basic FSL action words" class="category-icon">
-                    <h3 class="category-title">Common Phrases (COMELEC)</h3>
+                <a href="question_flashcard_quiz.html" class="category-card medium" tabindex="0" aria-label="Go to Common Phrases (COMELEC) section">
+                    <h3 class="category-title">Flashcards</h3>
                 </a>
-                <a href="question-kind-type-quiz.html" class="category-card dark" tabindex="0" aria-label="Go to FSL Questions section">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f8b446b4ffaf6412c0746c4ca4d6f1e62c13dc396cbc1bae9dd424bbf8ea3d6?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing FSL questions category" class="category-icon">
-                    <h3 class="category-title">Questions</h3>
+                <a href="#" class="category-card dark" tabindex="0" aria-label="Go to Common Phrases (COMELEC) section">
+                    <h3 class="category-title">True or False</h3>
                 </a>
-                <a href="letters_and_numbers_quiz.html" class="category-card bit_dark" tabindex="0" aria-label="Go to FSL Questions section">
-                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f8b446b4ffaf6412c0746c4ca4d6f1e62c13dc396cbc1bae9dd424bbf8ea3d6?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba" alt="Icon representing FSL questions category" class="category-icon">
-                    <h3 class="category-title">Letters and Numbers</h3>
+                <a href="#" class="category-card bit_dark" tabindex="0" aria-label="Go to Common Phrases (COMELEC) section">
+                    <h3 class="category-title">Multiple Choice - anada one</h3>
                 </a>
-            </section>
+    </section>
             <footer class="app-footer">
                 <nav class="footer-nav">
                     <ul class="nav-list">
@@ -75,5 +76,5 @@
                     </ul>
                 </nav>
             </footer>
-        </section>
-    </body>
+        </section>    
+</body>
