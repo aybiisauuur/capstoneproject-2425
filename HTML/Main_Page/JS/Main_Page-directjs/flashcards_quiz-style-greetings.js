@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const flashcard = document.querySelector('.flashcard');
     const video = document.querySelector('.card-video');
     const nextButton = document.getElementById('next-button');
+    const prevButton = document.getElementById('previous-button');
+    const shuffleButton = document.getElementById('shuffle-button');
+    const resetButton = document.getElementById('reset-button');
     
     // Flashcards data - add your questions here
-    const flashcards = [
+    let flashcards = [
         {
             frontText: "Good Morning",
             videoSrc: "https://cdn.builder.io/o/assets%2Ffa2701a192bc4724a7c3ede9e2d95cb2%2Fdaaf40ef88e84bb6b94952f07a98a26c%2Fcompressed?apiKey=fa2701a192bc4724a7c3ede9e2d95cb2&token=daaf40ef88e84bb6b94952f07a98a26c&alt=media&optimized=true"
@@ -85,8 +88,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // next button
     nextButton.addEventListener('click', () => {
         currentCardIndex = (currentCardIndex + 1) % flashcards.length;
+        updateFlashcard();
+    });
+
+    // previous button
+    prevButton.addEventListener('click', () => {
+        currentCardIndex = (currentCardIndex - 1 + flashcards.length) % flashcards.length;
+        updateFlashcard();
+    });
+
+    //shuffle button
+    shuffleButton.addEventListener('click', () => {
+        // Shuffle the flashcards array using Fisher-Yates algorithm
+        for (let i = flashcards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+        }
+    
+        // Reset index to 0 after shuffling
+        currentCardIndex = 0;
+        updateFlashcard();
+    });
+
+    //reset button
+    const originalFlashcards = [...flashcards]; // Copy the original order
+    resetButton.addEventListener('click', () => {
+        flashcards = [...originalFlashcards]; // Restore original order
+        currentCardIndex = 0; // Reset to the first card
         updateFlashcard();
     });
 

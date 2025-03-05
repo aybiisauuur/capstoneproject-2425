@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next-button');
     const prevButton = document.getElementById('previous-button');
     const shuffleButton = document.getElementById('shuffle-button');
+    const resetButton = document.getElementById('reset-button');
     
     // Flashcards data - add your questions here
-    const flashcards = [
+    let flashcards = [
         {
             frontText: "Vote",
             videoSrc: "https://cdn.builder.io/o/assets%2F46a78e6780fc481d9e0cdcbac16d84ba%2Ff2e2862975a34d998cb355ce845fa274%2Fcompressed?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&token=f2e2862975a34d998cb355ce845fa274&alt=media&optimized=true"
@@ -193,6 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Reset index to 0 after shuffling
         currentCardIndex = 0;
+        updateFlashcard();
+    });
+
+    //reset button
+    const originalFlashcards = [...flashcards]; // Copy the original order
+    resetButton.addEventListener('click', () => {
+        flashcards = [...originalFlashcards]; // Restore original order
+        currentCardIndex = 0; // Reset to the first card
         updateFlashcard();
     });
     
