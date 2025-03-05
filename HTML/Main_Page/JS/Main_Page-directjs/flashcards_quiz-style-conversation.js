@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.getElementById('previous-button');
     const shuffleButton = document.getElementById('shuffle-button');
     const resetButton = document.getElementById('reset-button');
-    
+    const restartButton = document.querySelector(".btn-primary"); // Restart Flashcards button
+    const modal = new bootstrap.Modal(document.getElementById('flashcardModal'));
+
     // Flashcards data - add your questions here
     let flashcards = [
         {
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             frontText: "No/Disagree",
             videoSrc: "https://cdn.builder.io/o/assets%2F46a78e6780fc481d9e0cdcbac16d84ba%2F60e52d6f85a8423682905d3b3815ce55%2Fcompressed?apiKey=46a78e6780fc481d9e0cdcbac16d84ba&token=60e52d6f85a8423682905d3b3815ce55&alt=media&optimized=true"
         },
-        
+
     ];
 
     let currentCardIndex = 0;
@@ -56,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         video.load();
     }
 
-    flashcard.addEventListener('click', function() {
+    flashcard.addEventListener('click', function () {
         this.classList.toggle('flipped');
-        
-        if(this.classList.contains('flipped')) {
+
+        if (this.classList.contains('flipped')) {
             video.play();
         } else {
             video.pause();
@@ -86,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const j = Math.floor(Math.random() * (i + 1));
             [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
         }
-    
+
         // Reset index to 0 after shuffling
         currentCardIndex = 0;
         updateFlashcard();
@@ -101,20 +103,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('keydown', (e) => {
-        if(e.code === 'Space') {
+        if (e.code === 'Space') {
             flashcard.classList.toggle('flipped');
-            if(flashcard.classList.contains('flipped')) {
+            if (flashcard.classList.contains('flipped')) {
                 video.play();
             } else {
                 video.pause();
                 video.currentTime = 0;
             }
         }
-        if(e.code === 'ArrowRight') {
+        if (e.code === 'ArrowRight') {
             nextButton.click();
         }
     });
 
-
     updateFlashcard();
+
+    // // bootstrap modal 
+    // function updateFlashcard() {
+    //     if (currentCardIndex >= flashcards.length) {
+    //         modal.show(); // Show Bootstrap modal
+    //         return;
+    //     }
+    //     console.log("Showing:", flashcards[currentCardIndex]); // Replace with your flashcard update logic
+    // }
+
+    // // Restart Button - Resets flashcards and closes modal
+    // restartButton.addEventListener("click", () => {
+    //     currentCardIndex = 0; // Reset index
+    //     updateFlashcard();
+    //     modal.hide(); // Close modal
+    // });
+
+    // // Close modal when the close button is clicked
+    // document.querySelector("#flashcardModal .btn-secondary").addEventListener("click", () => {
+    //     flashcardModal.hide();
+    // });
 });
