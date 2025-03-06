@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/Main_Page-direct/trueORfalse-style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1 class="app-title">True or False</h1>
+    </header>
+    <div class="header">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="video-container">
+        <video id="quizVideo" controls autoplay></video>
+    </div>
+
+    <div class="question-container">
+        <h2 id="questionText"></h2>
+    </div>
+
+    <div class="buttons-container">
+        <button class="true-false-btn" id="trueBtn">True</button>
+        <button class="true-false-btn" id="falseBtn">False</button>
+        <button class="next-btn" id="nextBtn">Next Question</button>
+    </div>
+
+    <script src="JS/Main_Page-directjs/trueOfalse-backend.js"></script>
+</body>
+</html>
