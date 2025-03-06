@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.getElementById('previous-button');
     const shuffleButton = document.getElementById('shuffle-button');
     const resetButton = document.getElementById('reset-button');
-    const restartButton = document.querySelector(".btn-primary"); // Restart Flashcards button
-    const modal = new bootstrap.Modal(document.getElementById('flashcardModal'));
+    // const restartButton = document.querySelector(".btn-primary"); // Restart Flashcards button
+    // const modal = new bootstrap.Modal(document.getElementById('flashcardModal'));
 
     // Flashcards data - add your questions here
     let flashcards = [
@@ -118,6 +118,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateFlashcard();
+
+    document.getElementById("next-button").addEventListener("click", () => {
+        if (currentCardIndex < flashcards.length - 1) {
+            currentCardIndex++;
+            updateFlashcard();
+        } else {
+            alert("Congratulations! You've completed all flashcards!");
+            currentCardIndex = 0; // Reset to the first card
+            updateFlashcard();
+        }
+    });
+    
 
     // // bootstrap modal 
     // function updateFlashcard() {
