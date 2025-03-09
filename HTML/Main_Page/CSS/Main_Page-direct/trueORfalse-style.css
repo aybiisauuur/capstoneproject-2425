@@ -1,0 +1,117 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.app-header {
+    background-color: rgba(217, 217, 217, 0.4);
+    border-top: 2px solid #575757;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.app-title {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.header {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    display: flex;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-segment {
+    flex: 1;
+    transition: background-color 0.3s;
+}
+
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 470px; /* Adjust as needed */
+    margin: 20px auto; /* Center the video */
+    padding: 20px;
+    margin-top: -3%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+video {
+    width: 130%;
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+.question-container {
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#questionText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.true-false-btn {
+    background-color: #e0e0e0;
+}
+
+.next-btn {
+    background-color: #007bff;
+    color: white;
+    display: none;
+}
+
+.correct {
+    color: #fff;
+    background-color: #28a745 !important;
+}
+
+.wrong {
+    color: #fff;
+    background-color: #dc3545 !important;
+}

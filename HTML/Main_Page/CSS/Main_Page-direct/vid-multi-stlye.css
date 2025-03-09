@@ -1,0 +1,161 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.top-header, .app-header {
+    background-color: rgba(217, 217, 217, 0.4);
+    border-top: 2px solid #575757;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.page-title {
+    color: #000;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.quiz-container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduced from 25px */
+    margin: 0 auto;
+    padding: 0 20px 20px; /* Reduced bottom padding */
+    position: relative;
+    height: calc(100vh - 100px); /* Subtract header height */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+#question-text {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px 0; /* Reduced from 20px */
+    padding: 0 15px;
+}
+
+
+.app-title {
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+
+.progress-bar {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px; /* Reduced from 25px */
+    width: 100%;
+}
+
+.progress-segment {
+    height: 8px;
+    flex: 1;
+    background-color: #555;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.progress-segment.correct {
+    background-color: #4CAF50;
+}
+
+.progress-segment.incorrect {
+    background-color: #f44336;
+}
+
+.video-options-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Reduced from 25px */
+    justify-items: center;
+}
+
+.video-option {
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    width: 100%;
+    max-width: 500px;
+}
+
+.video-option video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.video-option:hover {
+    transform: scale(1.02);
+}
+
+.video-option.correct {
+    box-shadow: 0 0 0 3px #4CAF50;
+}
+
+.video-option.incorrect {
+    box-shadow: 0 0 0 3px #f44336;
+}
+
+.next-btn {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 15px; /* Reduced from 30px */
+    align-self: center;
+    min-width: 200px;
+    transition: all 0.2s ease;
+    display: none;
+}
+
+.next-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.next-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add this if you want the button to appear with a fade effect */
+.next-btn.visible {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
