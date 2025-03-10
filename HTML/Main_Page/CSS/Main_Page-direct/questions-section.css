@@ -137,9 +137,10 @@ body {
     border-radius: 10px;
     border: 1px solid #000;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 27px 33px;
+    padding: 0;
     cursor: pointer;
     transition: transform 0.2s;
+    overflow: hidden;
 }
 
 .phrase-card:hover {
