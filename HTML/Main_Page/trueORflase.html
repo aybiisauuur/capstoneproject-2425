@@ -8,26 +8,33 @@
     <link rel="stylesheet" href="CSS/Main_Page-direct/trueORfalse-style.css">
 </head>
 <body>
-    <header class="app-header">
-        <h1 class="app-title">True or False</h1>
-    </header>
-    
-    <div class="progress-bar" id="progressBar"></div>
+    <section class="T_or_F" role="main">
+        <header class="top-header" role="banner">
+            <a href="greetings-kind-of-type_quiz.html" class="back-link" aria-label="Back to previous page">
+                <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="back-icon" aria-hidden="true">
+                <span class="back-text">Quiz - Type</span>
+            </a>
+            <h1 class="page-title">True or False - Quiz</h1>
+            </header>
+            
+            <div class="progress-bar" id="progressBar"></div>
 
-    <div class="video-container">
-        <video id="quizVideo" controls autoplay></video>
-    </div>
+            <div class="video-container">
+                <video id="quizVideo" controls autoplay></video>
+            </div>
 
-    <div class="question-container">
-        <h2 id="questionText"></h2>
-    </div>
+            <div class="question-container">
+                <h2 id="questionText"></h2>
+            </div>
 
-    <div class="buttons-container">
-        <button class="true-false-btn" id="trueBtn">True</button>
-        <button class="true-false-btn" id="falseBtn">False</button>
-        <button class="next-btn" id="nextBtn">Next Question</button>
-    </div>
-
+            <div class="buttons-container">
+                <button class="true-false-btn" id="trueBtn">True</button>
+                <button class="true-false-btn" id="falseBtn">False</button>
+                <button class="next-btn" id="nextBtn">Next Question</button>
+            </div>
+    </section>
     <script src="JS/Main_Page-directjs/trueOfalse-backend.js"></script>
 </body>
 </html>

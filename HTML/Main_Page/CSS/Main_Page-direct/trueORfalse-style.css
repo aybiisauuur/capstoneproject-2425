@@ -8,6 +8,44 @@ body {
     background-color: #fff;
 }
 
+.top-header {
+    background-color: rgba(217, 217, 217, 0.4);
+    border-top: 2px solid #575757;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 1.188rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: opacity 0.2s;
+}
+
+.back-link:hover,
+.back-link:focus {
+    opacity: 0.8;
+}
+.back-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+.back-text {
+    font-size: 20px;
+}
+.page-title {
+    font-size: 19px;
+    color: #000;
+    font-weight: 400;
+    margin: 0;
+}
+
 .app-header {
     background-color: rgba(217, 217, 217, 0.4);
     border-top: 2px solid #575757;
@@ -17,7 +55,7 @@ body {
 
 .app-title {
     color: #000;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     margin: 0;
 }

@@ -98,7 +98,7 @@ function loadQuestion() {
     videoElement.src = quizData[currentQuestion].videoUrl;
     questionText.textContent = `Is this video saying "${quizData[currentQuestion].statement}"?`;
     nextBtn.style.display = 'none';
-    // Reset buttons to default state
+
     trueBtn.classList.remove('correct', 'wrong');
     falseBtn.classList.remove('correct', 'wrong');
     trueBtn.disabled = false;
@@ -109,11 +109,11 @@ function checkAnswer(userAnswer) {
     const correct = userAnswer === quizData[currentQuestion].correctAnswer;
     score[currentQuestion] = correct;
 
-    // Update progress bar
+
     const segment = progressBar.children[currentQuestion];
     segment.classList.add(correct ? 'correct' : 'incorrect');
 
-    // Get clicked button
+
     const clickedButton = userAnswer ? trueBtn : falseBtn;
     
 
