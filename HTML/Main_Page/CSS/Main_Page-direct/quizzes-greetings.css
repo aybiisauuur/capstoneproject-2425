@@ -1,17 +1,17 @@
 /* styles.css */
 
 body {
-    font-family: 'Josefin Sans', sans-serif;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
   
   .quiz {
     display: flex;
@@ -245,36 +245,31 @@ body {
 }
 
 
-.progress-container {
-  width: 80%;
-  height: 30px;
-  background-color: #e0e0e0;
-  border-radius: 15px;
-  margin: 20px auto;
-  overflow: hidden;
-  position: relative;
-}
-
 .progress-bar {
-  height: 100%;
-  width: 0;
   display: flex;
-  transition: width 0.3s ease;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  width: 80%;
 }
 
-.progress-correct {
-  background-color: #4CAF50; /* Green for correct */
-  height: 100%;
-  width: 0;
-  transition: width 0.3s ease;
+.progress-segment {
+  height: 8px;
+  flex: 1;
+  background-color: #555;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.progress-incorrect {
-  background-color: #f44336; /* Red for incorrect */
-  height: 100%;
-  width: 0;
-  transition: width 0.3s ease;
+.progress-segment.correct {
+  background-color: #4CAF50;
 }
+
+.progress-segment.incorrect {
+  background-color: #f44336;
+}
+
 
 .correct .overlay {
     background: rgba(76, 175, 80, 0.5) !important;

@@ -17,28 +17,37 @@ body {
 
 .app-title {
     color: #000;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 400;
     margin: 0;
 }
 
-.header {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
 .progress-bar {
     display: flex;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px; /* Reduced from 25px */
+    width: 100%;
 }
 
 .progress-segment {
+    height: 10px;
     flex: 1;
-    transition: background-color 0.3s;
+    min-width: 25px; /* Minimum segment width */
+    background-color: #555;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.progress-segment.correct {
+    background-color: #4CAF50;
+}
+
+.progress-segment.incorrect {
+    background-color: #f44336;
 }
 
 .video-container {
@@ -46,8 +55,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    max-width: 470px; /* Adjust as needed */
-    margin: 20px auto; /* Center the video */
+    max-width: 470px;
+    margin: 20px auto;
     padding: 20px;
     margin-top: -3%;
     border-radius: 10px;
@@ -55,6 +64,7 @@ body {
 }
 
 video {
+    margin-top: 10%;
     width: 130%;
     max-height: 400px;
     border-radius: 10px;
@@ -80,7 +90,6 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }

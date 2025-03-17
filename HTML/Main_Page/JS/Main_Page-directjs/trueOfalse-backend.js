@@ -90,6 +90,11 @@ function initializeProgressBar() {
     quizData.forEach(() => {
         const segment = document.createElement('div');
         segment.className = 'progress-segment';
+        // Add subtle animation on initial load
+        segment.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            segment.style.transform = 'scale(1)';
+        }, 50);
         progressBar.appendChild(segment);
     });
 }
@@ -108,14 +113,15 @@ function checkAnswer(userAnswer) {
     const correct = userAnswer === quizData[currentQuestion].correctAnswer;
     score[currentQuestion] = correct;
     
+    // Update progress segment
+    const segment = progressBar.children[currentQuestion];
+    segment.classList.add(correct ? 'correct' : 'incorrect');
+    
     // Update button colors
     const correctBtn = quizData[currentQuestion].correctAnswer ? trueBtn : falseBtn;
     const wrongBtn = quizData[currentQuestion].correctAnswer ? falseBtn : trueBtn;
     correctBtn.classList.add('correct');
     wrongBtn.classList.add('wrong');
-    
-    // Update progress bar
-    progressBar.children[currentQuestion].style.backgroundColor = correct ? '#28a745' : '#dc3545';
     
     // Disable buttons and show next button
     trueBtn.disabled = true;
