@@ -49,10 +49,11 @@ const questions = [
 let currentQuestion = 0;
 let selectedOption = null;
 let progressStatus = [];
-
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('video-options-container');
 const nextBtn = document.getElementById('next-btn');
+const finalAnswerBtn = document.getElementById('final-answer-btn');
+
 
 function initializeProgressBar() {
     const progressBar = document.getElementById('progress-bar');
@@ -75,65 +76,79 @@ function updateProgressBar() {
     });
 }
 
+
 function loadQuestion() {
     const question = questions[currentQuestion];
     questionText.textContent = question.question;
     optionsContainer.innerHTML = '';
-    
+    nextBtn.style.display = 'none';
+    finalAnswerBtn.style.display = 'none';
+    selectedOption = null;
     question.options.forEach(option => {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'video-option';
-        optionDiv.innerHTML = `
-            <video controls>
-                <source src="${option.video}" type="video/mp4">
-            </video>
-        `;
+        optionDiv.innerHTML = `<video controls><source src="${option.video}" type="video/mp4"></video>`;
         
-        optionDiv.addEventListener('click', () => selectAnswer(optionDiv, option.correct));
+        optionDiv.addEventListener('click', () => {
+            if (!optionDiv.classList.contains('selected')) {
+                document.querySelectorAll('.video-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                optionDiv.classList.add('selected');
+                finalAnswerBtn.style.display = 'block';
+                selectedOption = { element: optionDiv, correct: option.correct };
+            }
+        });
         optionsContainer.appendChild(optionDiv);
     });
     
-    nextBtn.style.display = 'none';
-    selectedOption = null;
     updateProgressBar();
 }
 
-function selectAnswer(optionDiv, isCorrect) {
-    if (selectedOption) return;
-    
-    selectedOption = optionDiv;
+
+function confirmFinalAnswer() {
+    if (!selectedOption) return;
+    selectedOption.element.classList.remove('selected');
+    selectedOption.element.classList.add(selectedOption.correct ? 'correct' : 'incorrect');
+    progressStatus[currentQuestion] = selectedOption.correct;
+    updateProgressBar();
     document.querySelectorAll('.video-option').forEach(opt => {
+        opt.style.pointerEvents = 'none';
+    });
+    finalAnswerBtn.style.display = 'none';
+    nextBtn.style.display = 'block';
+}
+
+
+function nextQuestion() {
+    document.querySelectorAll('.video-option').forEach(opt => {
+        opt.style.pointerEvents = 'auto';
         opt.classList.remove('correct', 'incorrect');
     });
     
-    optionDiv.classList.add(isCorrect ? 'correct' : 'incorrect');
-    nextBtn.style.display = 'block';
-    progressStatus[currentQuestion] = isCorrect;
-    updateProgressBar();
-}
-
-nextBtn.addEventListener('click', () => {
     currentQuestion++;
     if (currentQuestion < questions.length) {
         loadQuestion();
     } else {
         showFinalResults();
     }
-});
+}
 
 function showFinalResults() {
     const correctCount = progressStatus.filter(status => status).length;
-    
     optionsContainer.innerHTML = `
-        <div class="final-results" style="text-align: center; width: 100%;">
+        <div class="final-results">
             <h2>Quiz Complete!</h2>
             <p>You got ${correctCount} out of ${questions.length} correct!</p>
         </div>
     `;
     nextBtn.style.display = 'none';
-    questionText.textContent = '';
 }
 
-// Initialize quiz
+
+finalAnswerBtn.addEventListener('click', confirmFinalAnswer);
+nextBtn.addEventListener('click', nextQuestion);
+
+
 initializeProgressBar();
 loadQuestion();
