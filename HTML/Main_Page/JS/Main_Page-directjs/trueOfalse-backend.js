@@ -90,11 +90,6 @@ function initializeProgressBar() {
     quizData.forEach(() => {
         const segment = document.createElement('div');
         segment.className = 'progress-segment';
-        // Add subtle animation on initial load
-        segment.style.transform = 'scale(0.9)';
-        setTimeout(() => {
-            segment.style.transform = 'scale(1)';
-        }, 50);
         progressBar.appendChild(segment);
     });
 }
@@ -103,6 +98,7 @@ function loadQuestion() {
     videoElement.src = quizData[currentQuestion].videoUrl;
     questionText.textContent = `Is this video saying "${quizData[currentQuestion].statement}"?`;
     nextBtn.style.display = 'none';
+    // Reset buttons to default state
     trueBtn.classList.remove('correct', 'wrong');
     falseBtn.classList.remove('correct', 'wrong');
     trueBtn.disabled = false;
@@ -112,18 +108,18 @@ function loadQuestion() {
 function checkAnswer(userAnswer) {
     const correct = userAnswer === quizData[currentQuestion].correctAnswer;
     score[currentQuestion] = correct;
-    
-    // Update progress segment
+
+    // Update progress bar
     const segment = progressBar.children[currentQuestion];
     segment.classList.add(correct ? 'correct' : 'incorrect');
+
+    // Get clicked button
+    const clickedButton = userAnswer ? trueBtn : falseBtn;
     
-    // Update button colors
-    const correctBtn = quizData[currentQuestion].correctAnswer ? trueBtn : falseBtn;
-    const wrongBtn = quizData[currentQuestion].correctAnswer ? falseBtn : trueBtn;
-    correctBtn.classList.add('correct');
-    wrongBtn.classList.add('wrong');
-    
-    // Disable buttons and show next button
+
+    clickedButton.classList.add(correct ? 'correct' : 'wrong');
+
+
     trueBtn.disabled = true;
     falseBtn.disabled = true;
     nextBtn.style.display = 'block';
@@ -143,11 +139,11 @@ function nextQuestion() {
     }
 }
 
-// Event Listeners
+
 trueBtn.addEventListener('click', () => checkAnswer(true));
 falseBtn.addEventListener('click', () => checkAnswer(false));
 nextBtn.addEventListener('click', nextQuestion);
 
-// Initialize quiz
+
 initializeProgressBar();
 loadQuestion();
