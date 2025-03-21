@@ -244,39 +244,55 @@ body {
   margin-bottom: 5px;
 }
 
+.progress-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px 0;
+}
+
+.progress-wrapper {
+  margin-bottom: 15px;
+}
+
+.progress-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
 
 .progress-bar {
   display: flex;
-  gap: 3px;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto;
-  width: 80%;
+  gap: 2px;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .progress-segment {
-  height: 8px;
   flex: 1;
-  background-color: #555;
-  border-radius: 4px;
+  background: #ddd;
   transition: background-color 0.3s ease;
 }
 
 .progress-segment.correct {
-  background-color: #4CAF50;
+  background: #4CAF50;
+}
+
+.progress-segment.retry-correct {
+  background: #FFD700;
 }
 
 .progress-segment.incorrect {
-  background-color: #f44336;
+  background: #f44336;
 }
 
-
-.correct .overlay {
-    background: rgba(76, 175, 80, 0.5) !important;
-}
-
-.incorrect .overlay {
-    background: rgba(244, 67, 54, 0.5) !important;
+/* Disable pointer events when answered */
+.Options-container[style*="pointer-events: none"] .Option_A,
+.Options-container[style*="pointer-events: none"] .Option_B,
+.Options-container[style*="pointer-events: none"] .Option_C,
+.Options-container[style*="pointer-events: none"] .Option_D {
+  cursor: not-allowed;
+  opacity: 0.8;
 }
 
 #next-button {

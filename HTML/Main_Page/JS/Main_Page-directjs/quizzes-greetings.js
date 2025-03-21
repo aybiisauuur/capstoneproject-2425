@@ -3,7 +3,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("quiz-video");
   const replayButton = document.getElementById("replay-button");
   const optionsContainer = document.querySelector(".Options-container");
-
+  
+  // Progress System Variables
+  let answered = false;
+  let currentAttempt = 1;
+  const maxAttempts = 2;
+  let progressBars = {
+    first: null,
+    second: null
+  };
   const allQuestions = [
     {//goodMorning
       video:
@@ -110,45 +118,64 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentQuestions = allQuestions.slice();
   let currentQuestionIndex = 0;
   let retryQuestions = [];
-  let totalQuestions = allQuestions.length;
-  let baseProgress = 0;
-  let retryProgress = 0;
-  let correctAttempts = 0;
-  let incorrectAttempts = 0;
-  const maxPossibleAttempts = 20; // 10 questions × 2 attempts max
 
-  const progressBase = document.createElement('div');
-  const progressRetry = document.createElement('div');
-  document.querySelector('.progress-container').append(progressBase, progressRetry);
-  const progressBar = document.querySelector('.progress-bar');
-  const progressCorrect = document.querySelector('.progress-correct');
-  const progressIncorrect = document.querySelector('.progress-incorrect');
+
+  const progressContainer = document.createElement('div');
+  progressContainer.className = 'progress-container';
+  const firstProgressWrapper = document.createElement('div');
+  firstProgressWrapper.className = 'progress-wrapper';
+  const firstLabel = document.createElement('div');
+  firstLabel.className = 'progress-label';
+  firstLabel.textContent = 'First Attempt';
+  progressBars.first = document.createElement('div');
+  progressBars.first.className = 'progress-bar';
+  firstProgressWrapper.append(firstLabel, progressBars.first);
+
+  // Second Attempt Progress
+  const secondProgressWrapper = document.createElement('div');
+  secondProgressWrapper.className = 'progress-wrapper';
+  secondProgressWrapper.style.display = 'none';
+  const secondLabel = document.createElement('div');
+  secondLabel.className = 'progress-label';
+  secondLabel.textContent = 'Second Attempt';
+  progressBars.second = document.createElement('div');
+  progressBars.second.className = 'progress-bar';
+  secondProgressWrapper.append(secondLabel, progressBars.second);
+
+  progressContainer.append(firstProgressWrapper, secondProgressWrapper);
+  document.querySelector('.quiz').insertBefore(progressContainer, document.querySelector('.next-container'));
+
+
+  function initializeProgressBars() {
+    progressBars.first.innerHTML = '';
+    progressBars.second.innerHTML = '';
+
+    allQuestions.forEach(() => {
+      const segment = document.createElement('div');
+      segment.className = 'progress-segment';
+      progressBars.first.appendChild(segment);
+    });
+  }
+
+
   function updateProgress(isCorrect) {
-    if (isCorrect) {
-        correctAttempts++;
+    const currentBar = currentAttempt === 1 ? progressBars.first : progressBars.second;
+    const segments = currentBar.querySelectorAll('.progress-segment');
+    const currentSegment = segments[currentQuestionIndex];
+
+    if (currentAttempt === 1) {
+      currentSegment.classList.add(isCorrect ? 'correct' : 'incorrect');
     } else {
-        incorrectAttempts++;
+      currentSegment.classList.add(isCorrect ? 'retry-correct' : 'incorrect');
     }
+  }
 
-    const totalAttempts = correctAttempts + incorrectAttempts;
-    const progressPercentage = (totalAttempts / maxPossibleAttempts) * 100;
-    
-    progressBar.style.width = `${progressPercentage}%`;
-    
-    if (totalAttempts > 0) {
-        const correctWidth = (correctAttempts / totalAttempts) * 100;
-        const incorrectWidth = (incorrectAttempts / totalAttempts) * 100;
-        
-        progressCorrect.style.width = `${correctWidth}%`;
-        progressIncorrect.style.width = `${incorrectWidth}%`;
-    }
-}
-
-progressBase.className = 'progress-base';
-progressRetry.className = 'progress-retry';
 
   function loadQuestion(questionIndex) {
     console.log("Loading question index:", questionIndex);
+    answered = false;
+    optionsContainer.style.pointerEvents = 'auto';
+    
     const question = currentQuestions[questionIndex];
     video.src = question.video;
     video.load();
@@ -168,62 +195,69 @@ progressRetry.className = 'progress-retry';
 
       optionDiv.appendChild(img);
       optionDiv.appendChild(overlay);
-      optionDiv.addEventListener("click", function () {
-        console.log("Option clicked:", img.src);
-        handleAnswer(optionDiv);
-      });
-
       optionsContainer.appendChild(optionDiv);
     });
-    
   }
 
-  function handleAnswer(option) {
-    const isCorrect = option.getAttribute("data-correct") === "true";
+  optionsContainer.addEventListener('click', (event) => {
+    if (answered) return;
+    const optionDiv = event.target.closest('[data-correct]');
+    if (!optionDiv) return;
+
+    answered = true;
+    optionsContainer.style.pointerEvents = 'none';
+
+    const isCorrect = optionDiv.getAttribute('data-correct') === 'true';
     const question = currentQuestions[currentQuestionIndex];
 
     if (!isCorrect && !retryQuestions.includes(question)) {
-        retryQuestions.push(question);
+      retryQuestions.push(question);
     }
 
-  
     updateProgress(isCorrect);
-
-
-    option.classList.add(isCorrect ? "correct" : "incorrect");
+    optionDiv.classList.add(isCorrect ? "correct" : "incorrect");
     document.getElementById('next-button').style.display = 'block';
-}
-
-
-
-
-document.getElementById('next-button').addEventListener('click', () => {
-  currentQuestionIndex++;
-  
-  if (currentQuestionIndex >= currentQuestions.length) {
-      if (retryQuestions.length > 0) {
-          currentQuestions = retryQuestions;
-          retryQuestions = [];
-          currentQuestionIndex = 0;
-          alert("Let's try the incorrect questions again!");
-      } else {
-          alert("Quiz completed!");
-          return;
-      }
-  }
-  
-  loadQuestion(currentQuestionIndex);
-  document.getElementById('next-button').style.display = 'none';
-});
-
-
-  loadQuestion(currentQuestionIndex);
-
-  video.addEventListener("ended", function () {
-    console.log("Video ended");
-    replayButton.classList.remove("hidden");
-    replayButton.classList.add("visible");
   });
+
+  document.getElementById('next-button').addEventListener('click', () => {
+    // Reset options
+    document.querySelectorAll('.Options-container > div').forEach(option => {
+      option.classList.remove('correct', 'incorrect');
+    });
+
+    currentQuestionIndex++;
+    
+    if (currentQuestionIndex >= currentQuestions.length) {
+      if (retryQuestions.length > 0 && currentAttempt < maxAttempts) {
+        currentAttempt++;
+        // Initialize second attempt progress
+        secondProgressWrapper.style.display = 'block';
+        progressBars.second.innerHTML = '';
+        
+        retryQuestions.forEach(() => {
+          const segment = document.createElement('div');
+          segment.className = 'progress-segment';
+          progressBars.second.appendChild(segment);
+        });
+
+        currentQuestions = [...retryQuestions];
+        retryQuestions = [];
+        currentQuestionIndex = 0;
+      } else {
+        alert("Quiz completed!");
+        // Reset system
+        currentAttempt = 1;
+        currentQuestionIndex = 0;
+        initializeProgressBars();
+        secondProgressWrapper.style.display = 'none';
+      }
+    }
+    
+    loadQuestion(currentQuestionIndex);
+    document.getElementById('next-button').style.display = 'none';
+  });
+  initializeProgressBars();
+  loadQuestion(currentQuestionIndex);
 
   replayButton.addEventListener("click", function () {
     console.log("Replay button clicked");
