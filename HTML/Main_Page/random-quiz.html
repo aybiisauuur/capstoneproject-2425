@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Format Quiz</title>
+    <link rel="stylesheet" href="CSS/Main_Page-direct/randomQuiz_style.css">
+</head>
+<body>
+    <section class="quiz" role="main">
+        <header class="top-header" role="banner">
+            <a href="greetings-kind-of-type_quiz.html" class="back-link" aria-label="Back to previous page">
+                <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5a0739d6a7f59d76f219442bd8478312fc5a4ce00fc7218515a4a6831c1f9fe?placeholderIfAbsent=true&apiKey=46a78e6780fc481d9e0cdcbac16d84ba"
+                alt="" class="back-icon" aria-hidden="true">
+                <span class="back-text">Quiz - Type</span>
+            </a>
+            <h1 class="page-title">Random - Quiz</h1>
+        </header>
+        <div class="quiz-container">
+            <div class="progress">Question 1 of <span id="totalQuestions">15</span></div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div id="questions">
+            </div>
+            <div class="navigation">
+                <button onclick="nextQuestion()" id="nextButton" disabled>Next Question</button>
+            </div>
+            <div class="results" style="display: none;">
+                <h2>Quiz Complete!</h2>
+                <button onclick="restartQuiz()">Try Again</button>
+            </div>
+        </div>
+    </section>
+    <script src="JS/Main_Page-directjs/randomQuiz_func.js"></script>
+</body>
+</html>
