@@ -109,20 +109,39 @@ function checkAnswer(userAnswer) {
     const correct = userAnswer === quizData[currentQuestion].correctAnswer;
     score[currentQuestion] = correct;
 
-
     const segment = progressBar.children[currentQuestion];
     segment.classList.add(correct ? 'correct' : 'incorrect');
 
-
     const clickedButton = userAnswer ? trueBtn : falseBtn;
-    
-
     clickedButton.classList.add(correct ? 'correct' : 'wrong');
 
+    // Feedback text
+    const feedbackText = document.createElement('div');
+    feedbackText.id = 'feedbackText';
+    feedbackText.textContent = correct 
+        ? (Math.random() < 0.5 ? 'Correct! Good job!' : 'Correct Answer!') 
+        : 'Wrong answer, sorry!';
+    feedbackText.className = correct ? 'feedback-correct' : 'feedback-wrong';
+    questionText.parentNode.insertBefore(feedbackText, questionText.nextSibling);
 
     trueBtn.disabled = true;
     falseBtn.disabled = true;
     nextBtn.style.display = 'block';
+}
+
+function loadQuestion() {
+    videoElement.src = quizData[currentQuestion].videoUrl;
+    questionText.textContent = `Is this video saying "${quizData[currentQuestion].statement}"?`;
+    nextBtn.style.display = 'none';
+
+    trueBtn.classList.remove('correct', 'wrong');
+    falseBtn.classList.remove('correct', 'wrong');
+    trueBtn.disabled = false;
+    falseBtn.disabled = false;
+
+    // Clear previous feedback text
+    const oldFeedback = document.getElementById('feedbackText');
+    if (oldFeedback) oldFeedback.remove();
 }
 
 function nextQuestion() {

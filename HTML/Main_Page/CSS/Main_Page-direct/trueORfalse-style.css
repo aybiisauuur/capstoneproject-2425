@@ -162,3 +162,21 @@ button {
     color: #fff;
     background-color: #dc3545 !important;
 }
+
+.feedback-correct {
+    font-size: 25px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 20px; 
+    color: #4CAF50;
+    text-decoration: underline;
+}
+
+.feedback-wrong {
+    font-size: 25px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 20px; 
+    color: #F44336; /* Red for incorrect */
+    text-decoration: underline;
+}

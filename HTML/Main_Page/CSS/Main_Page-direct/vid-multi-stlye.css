@@ -197,8 +197,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
-    margin-top: 15px; 
-    align-self: center;
+    margin-top: 100px; 
+    justify-content: center;
+    align-items: center;
     min-width: 200px;
     transition: all 0.2s ease;
     display: none;
@@ -230,4 +231,22 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.feedback-correct {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+    color: #4CAF50; /* Green for correct */
+}
+
+.feedback-wrong {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+    color: #F44336; /* Red for incorrect */
 }
