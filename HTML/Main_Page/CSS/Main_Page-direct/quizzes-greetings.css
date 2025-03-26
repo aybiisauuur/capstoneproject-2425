@@ -244,46 +244,30 @@ body {
   margin-bottom: 5px;
 }
 
-.progress-container {
-  width: 80%;
-  margin: 20px auto;
-  padding: 10px 0;
-}
-
-.progress-wrapper {
-  margin-bottom: 15px;
-}
-
-.progress-label {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 5px;
-}
-
 .progress-bar {
   display: flex;
-  gap: 2px;
-  height: 8px;
-  border-radius: 4px;
-  overflow: hidden;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 15px; 
+  width: 100%;
 }
 
 .progress-segment {
+  height: 8px;
   flex: 1;
-  background: #ddd;
+  background-color: #555;
+  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .progress-segment.correct {
-  background: #4CAF50;
-}
-
-.progress-segment.retry-correct {
-  background: #FFD700;
+  background-color: #4CAF50;
 }
 
 .progress-segment.incorrect {
-  background: #f44336;
+  background-color: #f44336;
 }
 
 /* Disable pointer events when answered */
