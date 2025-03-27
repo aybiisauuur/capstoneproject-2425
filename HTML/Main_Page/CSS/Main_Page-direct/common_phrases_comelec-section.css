@@ -123,36 +123,40 @@ body {
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Exactly 4 cards per row */
-  gap: 20px;
-  max-width: 1300px;
-  width: 100%;
-  margin-top: 33px;
-  padding: 0 20px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  grid-template-columns: repeat(4, minmax(150px, 1fr)); /* 4 responsive columns */
+  gap: 15px; /* Space between cards */
+  max-width: 100%;
+  width: calc(100% - 40px); /* Leaves space on left & right */
+  padding: 5px 75px; /* Adds spacing on left (1st col) & right (4th col) */
+  margin-top: 20px;
+  overflow-y: auto; /* Scrollable if needed */
+  max-height: calc(100vh - 180px); /* Keeps grid within screen */
 }
 
 .phrase-card {
   background: #fff;
-  border-radius: 10px;
-  border: 1px solid #000;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Takes full width of grid column */
+  height: 180px; /* Perfect size for thumbnail */
   cursor: pointer;
   transition: transform 0.2s;
-  overflow: hidden;
-  aspect-ratio: 1.828;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .phrase-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .card-image-wrapper {
   position: relative;
-  aspect-ratio: 1.828;
+  width: 100%;
+  height: 100%; /* Perfect size for thumbnails */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,9 +168,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 6px;
 }
-
 
 .card-icon {
   width: 66px;
@@ -176,13 +179,6 @@ body {
   z-index: 1;
 }
 
-.card-title {
-  color: #000;
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 20px;
-  margin: 10px 0 0;
-}
 
 .visually-hidden {
   position: absolute;
@@ -431,5 +427,17 @@ video {
   .close-modal {
     right: 0;
     top: -50px;
+  }
+}
+
+@media (max-width: 991px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .cards-grid {
+    grid-template-columns: 1fr; /* 1 column for small screens */
   }
 }
