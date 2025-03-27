@@ -118,8 +118,8 @@ function checkAnswer(userAnswer) {
     // Feedback text
     const feedbackText = document.createElement('div');
     feedbackText.id = 'feedbackText';
-    feedbackText.textContent = correct 
-        ? (Math.random() < 0.5 ? 'Correct! Good job!' : 'Correct Answer!') 
+    feedbackText.textContent = correct
+        ? (Math.random() < 0.5 ? 'Correct! Good job!' : 'Correct Answer!')
         : 'Wrong answer, sorry!';
     feedbackText.className = correct ? 'feedback-correct' : 'feedback-wrong';
     questionText.parentNode.insertBefore(feedbackText, questionText.nextSibling);
@@ -150,15 +150,13 @@ function nextQuestion() {
         loadQuestion();
     } else {
         alert(`Quiz finished! Score: ${score.filter(Boolean).length}/${quizData.length}`);
-        // Reset quiz
+        //Reset quiz
         currentQuestion = 0;
         score = [];
         initializeProgressBar();
         loadQuestion();
     }
 }
-
-
 trueBtn.addEventListener('click', () => checkAnswer(true));
 falseBtn.addEventListener('click', () => checkAnswer(false));
 nextBtn.addEventListener('click', nextQuestion);
