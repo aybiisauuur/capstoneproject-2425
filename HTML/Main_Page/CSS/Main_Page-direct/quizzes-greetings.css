@@ -204,6 +204,30 @@ body {
   opacity: 1; /* Start fully visible */
 }
 
+.next-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  align-items: center;
+  margin: 10px 30px 20px 0; /* Adjust margins */
+  position: absolute;
+  bottom: 40px; /* Above the progress bar */
+  right: -275px; /* Keep it aligned to the right */
+  width: auto;
+}
+
+#next-button {
+  background-color: #004AAD; /* Match primary color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px; /* Match other button fonts */
+  font-weight: 500;
+  padding: 12px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
 .app-footer {
   background-color: #EEEEEE;
   border-top: 2px solid #575757;
