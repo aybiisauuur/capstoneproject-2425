@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <!-- Chat Section -->
     <section class="chat-container" aria-label="Live Chat Section">
         <header class="chat-header" role="heading" aria-level="1">
             <h1>Live Chat</h1>
@@ -21,17 +20,35 @@
 
         <form class="chat-content" aria-label="Chat Form">
             <label for="questions" class="questions-label">Questions</label>
-            <button type="button" class="question-button" id="election" aria-pressed="false">Election when?</button>
-            <button type="button" class="question-button" id="registration" aria-pressed="false">Next registration
-                when?</button>
-            <label for="answer" class="visually-hidden">Your Answer</label>
-            <textarea id="answer" class="answer-textarea" placeholder="Type your message here..."
-                aria-label="Type your message here" rows="5"></textarea>
-            <button type="submit" class="submit-button" aria-label="Send your message">Send</button>
-            <button type="clear" class="clear-button" aria-label="Clear chat">Clear chat</button>
+            <button type="button" class="question-button" id="election">Election when?</button>
+            <button type="button" class="question-button" id="registration">Next registration when?</button>
+            <textarea id="answer" class="answer-textarea" placeholder="Type your message here..." rows="3"></textarea>
+            <button type="submit" class="submit-button">Send</button>
+            <button type="button" class="clear-button" onclick="clearChat()">Clear</button>
         </form>
     </section>
-    </main>
 </body>
-
+<script>
+    function clearChat() {
+        document.getElementById("messagesContainer").innerHTML = "";
+    }
+    
+    function sendMessage() {
+        let messageBox = document.getElementById("answer");
+        let message = messageBox.value.trim();
+        if (message !== "") {
+            let messageContainer = document.getElementById("messagesContainer");
+            let newMessage = document.createElement("div");
+            newMessage.textContent = message;
+            newMessage.style.padding = "8px";
+            newMessage.style.borderRadius = "5px";
+            newMessage.style.backgroundColor = "#004AAD";
+            newMessage.style.color = "#fff";
+            newMessage.style.marginBottom = "5px";
+            messageContainer.appendChild(newMessage);
+            messageBox.value = "";
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        }
+    }
+    </script>
 </html>
