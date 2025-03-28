@@ -1,9 +1,11 @@
 {
   "hosting": {
     "public": "public",
-    "cleanUrls": true,
     "rewrites": [
-      { "source": "/", "destination": "/chat-client.html" }
+      {
+        "source": "**",
+        "destination": "/chat-client.html"
+      }
     ]
   }
 }
